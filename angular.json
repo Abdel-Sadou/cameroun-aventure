@@ -24,12 +24,35 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap-icons.min.css",
+              "src/assets/css/daterangepicker.css",
+              "src/assets/css/fancybox.min.css",
+              "src/assets/css/jarallax.css",
+              "src/assets/css/leaflet.css",
+              "src/assets/css/select2.min.css",
+              "src/assets/css/swiper-bundle.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/moment.min.js",
+              "src/assets/js/swiper-bundle.min.js",
+              "src/assets/js/jarallax.min.js",
+              "src/assets/js/wow.min.js",
+              "src/assets/js/fancybox.min.js",
+              "src/assets/js/leaflet.min.js",
+              "src/assets/js/SplitText.min.js",
+              "src/assets/js/daterangepicker.min.js",
+              "src/assets/js/select2.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -82,6 +105,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
