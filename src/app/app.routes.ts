@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent) },
+  { path: '', loadComponent: () => import('./features/home/home-dark.component').then(m => m.HomeDarkComponent) },
   { path: 'about', loadComponent: () => import('./features/about/about.component').then(m => m.AboutComponent) },
   { path: 'circuits', loadComponent: () => import('./features/circuits/circuit-list.component').then(m => m.CircuitListComponent) },
   { path: 'circuits/sidebar', loadComponent: () => import('./features/circuits/circuit-list-sidebar.component').then(m => m.CircuitListSidebarComponent) },

@@ -1,4 +1,4 @@
-<div class="bg-[#121316]">
+<div class="bg-white dark:bg-[#121316] transition-colors duration-300">
 
   <app-preloader />
 
@@ -126,8 +126,21 @@
         </div>
       </div>
       <div class="basis-[20%] flex justify-end items-center">
+        <button (click)="themeService.toggle()"
+          class="mr-6 text-dark-1 dark:text-white hover:text-primary-1 duration-200 flex items-center"
+          [title]="themeService.isDark() ? 'Passer en mode clair' : 'Passer en mode sombre'">
+          @if (themeService.isDark()) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            </svg>
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          }
+        </button>
         <a href="#"
-          class="text-white font-medium text-base inline-flex items-center mr-8  hover:text-primary-1 duration-200">
+          class="text-dark-1 dark:text-white font-medium text-base inline-flex items-center mr-8  hover:text-primary-1 duration-200">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="24" height="24" />
             <path
@@ -167,8 +180,20 @@
       <a routerLink="/" class="shrink-0 max-w-[50px]"><img src="assets/images/logo.png" alt="logo"></a>
 
       <div class="space-x-4 flex items-center">
+        <button (click)="themeService.toggle()"
+          class="text-dark-1 dark:text-white hover:text-primary-1 duration-200 flex items-center">
+          @if (themeService.isDark()) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            </svg>
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          }
+        </button>
         <a href="#"
-          class="text-white font-base text-base inline-flex items-center hover:text-primary-1 duration-200">
+          class="text-dark-1 dark:text-white font-base text-base inline-flex items-center hover:text-primary-1 duration-200">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="24" height="24" />
             <path
@@ -442,11 +467,11 @@
     <div class="container">
       <div class="grid lg:grid-cols-12 gap-base items-center">
         <div class="lg:col-span-6">
-          <div class="inline-block p-base border-dark-2 border wow fadeIn" data-wow-delay="0.2s">
+          <div class="inline-block p-base border-dark-5 dark:border-dark-2 border wow fadeIn" data-wow-delay="0.2s">
             <img src="assets/images/about/about2-1.webp" alt="about-image">
           </div>
         </div>
-        <div class="lg:col-span-6 text-white">
+        <div class="lg:col-span-6 text-dark-1 dark:text-white">
           <h5 class="font-cursive text-2md leading-1.5">About Us</h5>
           <h2 class="section-title-v2">We Are Best Tour &amp; Travel Agency in the World.</h2>
           <p class="text-md leading-1.7 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do
@@ -817,10 +842,10 @@
                 <li><i class="bi bi-star-fill"> </i></li>
                 <li><i class="bi bi-star-half"> </i></li>
               </ul>
-              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-6">"This place is great! I had a
+              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-2 dark:text-dark-6">"This place is great! I had a
                 very pleasant stay here. Great stuff and beautiful suites with a fabulous view etiam
                 rhoncus maecenas"</p>
-              <h5 class="text-white text-2md leading-1.5 font-semibold mt-5">Zara Zohan</h5>
+              <h5 class="text-dark-1 dark:text-white text-2md leading-1.5 font-semibold mt-5">Zara Zohan</h5>
               <img src="assets/images/touriest/testi-avater-2.webp" alt="revierer "
                 class="h-[60px] w-[60px] object-cover rounded-full mt-3 mx-auto">
             </div>
@@ -834,10 +859,10 @@
                 <li><i class="bi bi-star-fill"> </i></li>
                 <li><i class="bi bi-star-half"> </i></li>
               </ul>
-              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-6">"This place is great! I had a
+              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-2 dark:text-dark-6">"This place is great! I had a
                 very pleasant stay here. Great stuff and beautiful suites with a fabulous view etiam
                 rhoncus maecenas"</p>
-              <h5 class="text-white text-2md leading-1.5 font-semibold mt-5">Kathryn Murphy</h5>
+              <h5 class="text-dark-1 dark:text-white text-2md leading-1.5 font-semibold mt-5">Kathryn Murphy</h5>
               <img src="assets/images/touriest/testi-avater-3.webp" alt="revierer "
                 class="h-[60px] w-[60px] object-cover rounded-full mt-3 mx-auto">
             </div>
@@ -851,10 +876,10 @@
                 <li><i class="bi bi-star-fill"> </i></li>
                 <li><i class="bi bi-star-half"> </i></li>
               </ul>
-              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-6">"This place is great! I had a
+              <p class="leading-1.5 mt-5 lg:text-2md text-md text-dark-2 dark:text-dark-6">"This place is great! I had a
                 very pleasant stay here. Great stuff and beautiful suites with a fabulous view etiam
                 rhoncus maecenas"</p>
-              <h5 class="text-white text-2md leading-1.5 font-semibold mt-5">Skylar White</h5>
+              <h5 class="text-dark-1 dark:text-white text-2md leading-1.5 font-semibold mt-5">Skylar White</h5>
               <img src="assets/images/touriest/testi-avater.webp" alt="revierer "
                 class="h-[60px] w-[60px] object-cover rounded-full mt-3 mx-auto">
             </div>
@@ -874,7 +899,7 @@
         <h2 class="section-title-v3">Find Your Desire Destination</h2>
       </div>
       <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-base">
-        <div class="text-white group wow fadeInUp">
+        <div class="text-dark-1 dark:text-white group wow fadeInUp">
           <div class="overflow-hidden relative">
             <a routerLink="/blog/detail">
               <img src="assets/images/blog/b2-1.webp" alt="blog-thumb" class="group-hover:scale-105 duration-300 w-full">
@@ -885,7 +910,7 @@
           </div>
           <div class="pt-6">
             <div
-              class="relative text-base pl-[42px] text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
+              class="relative text-base pl-[42px] text-dark-3 dark:text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-dark-3 dark:before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
               <span>City Travel, </span> <span>Vacation</span>
             </div>
             <h3 class="card-title-alpha-v2  pt-3 group-hover:text-primary-1">
@@ -895,7 +920,7 @@
             </h3>
           </div>
         </div>
-        <div class="text-white group wow fadeInUp" data-wow-delay="0.2s">
+        <div class="text-dark-1 dark:text-white group wow fadeInUp" data-wow-delay="0.2s">
           <div class="overflow-hidden relative">
             <a routerLink="/blog/detail">
               <img src="assets/images/blog/b2-2.webp" alt="blog-thumb" class="group-hover:scale-105 duration-300 w-full">
@@ -906,7 +931,7 @@
           </div>
           <div class="pt-6">
             <div
-              class="relative text-base pl-[42px] text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
+              class="relative text-base pl-[42px] text-dark-3 dark:text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-dark-3 dark:before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
               <span>Mountain, </span> <span>City Travel</span>
             </div>
             <h3 class="card-title-alpha-v2  pt-3 group-hover:text-primary-1">
@@ -916,7 +941,7 @@
             </h3>
           </div>
         </div>
-        <div class="text-white group wow fadeInUp" data-wow-delay="0.4s">
+        <div class="text-dark-1 dark:text-white group wow fadeInUp" data-wow-delay="0.4s">
           <div class="overflow-hidden relative">
             <a routerLink="/blog/detail">
               <img src="assets/images/blog/b2-3.webp" alt="blog-thumb" class="group-hover:scale-105 duration-300 w-full">
@@ -927,7 +952,7 @@
           </div>
           <div class="pt-6">
             <div
-              class="relative text-base pl-[42px] text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
+              class="relative text-base pl-[42px] text-dark-3 dark:text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-dark-3 dark:before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
               <span>Hiking, </span> <span>Vacation</span>
             </div>
             <h3 class="card-title-alpha-v2  pt-3 group-hover:text-primary-1">
@@ -937,7 +962,7 @@
             </h3>
           </div>
         </div>
-        <div class="text-white group wow fadeInUp" data-wow-delay="0.6s">
+        <div class="text-dark-1 dark:text-white group wow fadeInUp" data-wow-delay="0.6s">
           <div class="overflow-hidden relative">
             <a routerLink="/blog/detail">
               <img src="assets/images/blog/b2-4.webp" alt="blog-thumb" class="group-hover:scale-105 duration-300 w-full">
@@ -948,7 +973,7 @@
           </div>
           <div class="pt-6">
             <div
-              class="relative text-base pl-[42px] text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
+              class="relative text-base pl-[42px] text-dark-3 dark:text-white leading-1.5 before:absolute before:content-[''] before:w-8 before:h-[2px] before:bg-dark-3 dark:before:bg-white before:left-0 before:top-1/2 before:-translate-y-1/2">
               <span>City Travel, </span> <span>Camping</span>
             </div>
             <h3 class="card-title-alpha-v2  pt-3 group-hover:text-primary-1">

@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PreloaderComponent } from '../../shared/components/preloader/preloader.component';
+import { ThemeService } from '../../shared/services/theme.service';
 
 declare var Swiper: any;
 declare var WOW: any;
@@ -15,6 +16,7 @@ declare var Fancybox: any;
   templateUrl: './home-dark.component.html'
 })
 export class HomeDarkComponent implements OnInit, AfterViewInit {
+  readonly themeService = inject(ThemeService);
   isScrolled = false;
   isMobileMenuOpen = false;
   openDropdowns: Set<number> = new Set();
