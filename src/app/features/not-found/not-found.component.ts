@@ -7,7 +7,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [RouterLink, PreloaderComponent, HeaderComponent, FooterComponent],
+  imports: [PreloaderComponent, HeaderComponent, FooterComponent],
   templateUrl: './not-found.component.html'
 })
 export class NotFoundComponent {}

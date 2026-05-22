@@ -7,7 +7,7 @@
     <div class="desktop-menu max-w-[1570px] mx-auto justify-between items-center xl:flex hidden">
       <div class="basis-[20%]">
         <a routerLink="/circuits/detail-1" class="btn_primary__v1">
-          Book A Trip
+          Réserver un Voyage
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999"
@@ -23,37 +23,29 @@
 
             <!-- dropdown -->
             <li class="group/step-one">
-              <a href="#" class="nav-link has-dropdown">Home</a>
-              <ul class="nav-dropdown">
-                <li><a routerLink="/">Home Classic</a></li>
-                <li><a routerLink="/home-dark">Home Dark</a></li>
-                <li><a routerLink="/home-parallax">Home Parallax</a></li>
-              </ul>
+              <a routerLink="/" class="nav-link">Accueil</a>
             </li>
 
             <!-- dropdown -->
             <li class="group/step-one">
               <a href="javascript:void(0)" class="nav-link has-dropdown">Pages</a>
               <ul class="nav-dropdown">
-                <li><a routerLink="/about">About Us</a></li>
+                <li><a routerLink="/about">À Propos</a></li>
                 <li><a routerLink="/destinations">Destinations</a></li>
-                <li><a routerLink="/destinations/detail">Destination Details</a></li>
-                <li><a routerLink="/guides">Guides</a></li>
-                <li><a routerLink="/gallery">Gallary</a></li>
+                <li><a routerLink="/guides">Nos Guides</a></li>
+                <li><a routerLink="/gallery">Galerie</a></li>
                 <li><a routerLink="/faq">FAQ</a></li>
-                <li><a routerLink="/not-found">Error</a></li>
-                <li><a routerLink="/auth">Sign Up / Sign In</a></li>
               </ul>
             </li>
 
             <!-- mega dropdown -->
             <li class="group/mega-dropdown">
-              <a href="javascript:void(0)" class="nav-link has-dropdown">Destination</a>
+              <a href="javascript:void(0)" class="nav-link has-dropdown">Destinations</a>
               <div class="nav-mega-dropdown grid grid-cols-6 gap-x-1">
                 <div class="col-span-4 border-r">
-                  <a routerLink="/circuits/sidebar"
+                  <a routerLink="/destinations"
                     class="py-2 flex items-center border-b border-stock-1 text-base text-dark-1 hover:text-primary-1 duration-200">
-                    Browse All Destination
+                    Toutes les Destinations
                     <div class="max-w-[20px] ml-2">
                       <svg class="group-hover/btn:translate-x-2 duration-200 " width="27"
                         height="14" viewBox="0 0 27 14" fill="none"
@@ -69,19 +61,19 @@
                     </div>
                   </a>
                   <ul class="grid grid-cols-3 mega-dropdown-links">
-                    <li><a routerLink="/circuits">New York</a></li>
-                    <li><a routerLink="/circuits">London</a></li>
-                    <li><a routerLink="/circuits">Paris</a></li>
-                    <li><a routerLink="/circuits">Dubai</a></li>
-                    <li><a routerLink="/circuits">Miami</a></li>
-                    <li><a routerLink="/circuits">Rome</a></li>
-                    <li><a routerLink="/circuits">Seattle</a></li>
-                    <li><a routerLink="/circuits">Amsterdam</a></li>
-                    <li><a routerLink="/circuits">Chicago</a></li>
-                    <li><a routerLink="/circuits">Las vegas</a></li>
-                    <li><a routerLink="/circuits">Barcelona</a></li>
-                    <li><a routerLink="/circuits">Cox's Bazar</a></li>
-                    <li><a routerLink="/circuits">Istanbul</a></li>
+                    <li><a routerLink="/destinations">Yaoundé & Centre</a></li>
+                    <li><a routerLink="/destinations">Kribi & Littoral</a></li>
+                    <li><a routerLink="/destinations">Mont Cameroun</a></li>
+                    <li><a routerLink="/destinations">Parc de Waza</a></li>
+                    <li><a routerLink="/destinations">Grand Nord</a></li>
+                    <li><a routerLink="/destinations">Ngaoundéré</a></li>
+                    <li><a routerLink="/destinations">Forêt du Dja</a></li>
+                    <li><a routerLink="/destinations">Ouest & Bamiléké</a></li>
+                    <li><a routerLink="/destinations">Foumban</a></li>
+                    <li><a routerLink="/destinations">Douala</a></li>
+                    <li><a routerLink="/destinations">Limbe</a></li>
+                    <li><a routerLink="/destinations">Monts Mandara</a></li>
+                    <li><a routerLink="/destinations">Lac Tchad</a></li>
                   </ul>
                 </div>
                 <div class="col-span-2">
@@ -100,22 +92,20 @@
           <ul class="flex items-center nav-list">
             <!-- dropdown -->
             <li class="group/step-one">
-              <a href="javascript:void(0)" class="nav-link has-dropdown">Blogs</a>
+              <a href="javascript:void(0)" class="nav-link has-dropdown">Blog</a>
               <ul class="nav-dropdown">
-                <li><a routerLink="/blog">Blog List</a></li>
-                <li><a routerLink="/blog/detail">Blog Details</a></li>
+                <li><a routerLink="/blog">Tous les Articles</a></li>
+                <li><a routerLink="/blog/detail">Détail Article</a></li>
               </ul>
             </li>
 
             <!-- dropdown -->
             <li class="group/step-one">
-              <a href="javascript:void(0)" class="nav-link has-dropdown">Packages</a>
+              <a href="javascript:void(0)" class="nav-link has-dropdown">Circuits</a>
               <ul class="nav-dropdown">
-                <li><a routerLink="/circuits">Package List</a></li>
-                <li><a routerLink="/circuits/sidebar">Package List Sidebar</a></li>
-                <li><a routerLink="/circuits/detail-1">Package Details - Layout I</a></li>
-                <li><a routerLink="/circuits/detail-2">Package Details - Layout II</a></li>
-                <li><a routerLink="/circuits/detail-3">Package Details - Layout III</a></li>
+                <li><a routerLink="/circuits">Tous les Circuits</a></li>
+                <li><a routerLink="/circuits/sidebar">Circuits avec Filtres</a></li>
+                <li><a routerLink="/circuits/detail-1">Détail Circuit</a></li>
               </ul>
             </li>
 
@@ -159,7 +149,7 @@
               stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-          <span class="ml-2">Cart (01)</span>
+          <span class="ml-2">Panier (01)</span>
         </a>
         <a routerLink="/auth"
           class="shrink-0 inline-flex justify-center items-center bg-primary-1 rounded-full h-12 w-12 text-white hover:bg-primary-2 duration-300">
@@ -212,7 +202,7 @@
               stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-          <span class="ml-2">Cart (01)</span>
+          <span class="ml-2">Panier (01)</span>
         </a>
         <a href="#"
           class="shrink-0 inline-flex justify-center items-center bg-primary-2 rounded-full h-10 w-10 text-white">
@@ -236,58 +226,48 @@
       <div id="mobile-menu" class="mobil-menu" [class.mm-active]="isMobileMenuOpen">
         <ul>
           <li class="group/step-one">
-            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(0)">Home</a>
-            <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(0)">
-              <li><a routerLink="/">Home Classic</a></li>
-              <li><a routerLink="/home-dark">Home Dark</a></li>
-              <li><a routerLink="/home-parallax">Home Parallax</a></li>
-            </ul>
+            <a routerLink="/" class="nav-link nav-link-sm">Accueil</a>
           </li>
           <li class="group/step-one">
             <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(1)">Pages</a>
             <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(1)">
-              <li><a routerLink="/about">About Us</a></li>
+              <li><a routerLink="/about">À Propos</a></li>
               <li><a routerLink="/destinations">Destinations</a></li>
-              <li><a routerLink="/destinations/detail">Destination Details</a></li>
-              <li><a routerLink="/guides">Guides</a></li>
-              <li><a routerLink="/gallery">Gallary</a></li>
+              <li><a routerLink="/guides">Nos Guides</a></li>
+              <li><a routerLink="/gallery">Galerie</a></li>
               <li><a routerLink="/faq">FAQ</a></li>
-              <li><a routerLink="/not-found">Error</a></li>
             </ul>
           </li>
           <li class="group/step-one">
-            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(2)">Destination</a>
+            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(2)">Destinations</a>
             <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(2)">
-              <li><a routerLink="/circuits">New York</a></li>
-              <li><a routerLink="/circuits">London</a></li>
-              <li><a routerLink="/circuits">Paris</a></li>
-              <li><a routerLink="/circuits">Dubai</a></li>
-              <li><a routerLink="/circuits">Miami</a></li>
-              <li><a routerLink="/circuits">Rome</a></li>
-              <li><a routerLink="/circuits">Seattle</a></li>
-              <li><a routerLink="/circuits">Amsterdam</a></li>
-              <li><a routerLink="/circuits">Chicago</a></li>
-              <li><a routerLink="/circuits">Las vegas</a></li>
-              <li><a routerLink="/circuits">Barcelona</a></li>
-              <li><a routerLink="/circuits">Cox's Bazar</a></li>
-              <li><a routerLink="/circuits">Istanbul</a></li>
+              <li><a routerLink="/destinations">Yaoundé & Centre</a></li>
+              <li><a routerLink="/destinations">Kribi & Littoral</a></li>
+              <li><a routerLink="/destinations">Mont Cameroun</a></li>
+              <li><a routerLink="/destinations">Parc de Waza</a></li>
+              <li><a routerLink="/destinations">Grand Nord</a></li>
+              <li><a routerLink="/destinations">Ngaoundéré</a></li>
+              <li><a routerLink="/destinations">Forêt du Dja</a></li>
+              <li><a routerLink="/destinations">Ouest & Bamiléké</a></li>
+              <li><a routerLink="/destinations">Douala</a></li>
+              <li><a routerLink="/destinations">Limbe</a></li>
+              <li><a routerLink="/destinations">Monts Mandara</a></li>
+              <li><a routerLink="/destinations">Lac Tchad</a></li>
             </ul>
           </li>
           <li class="group/step-one">
-            <a href="#" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(3)">Blogs</a>
+            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(3)">Blog</a>
             <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(3)">
-              <li><a routerLink="/blog">Blog List</a></li>
-              <li><a routerLink="/blog/detail">Blog Details</a></li>
+              <li><a routerLink="/blog">Tous les Articles</a></li>
+              <li><a routerLink="/blog/detail">Détail Article</a></li>
             </ul>
           </li>
           <li class="group/step-one">
-            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(4)">Packages</a>
+            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(4)">Circuits</a>
             <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(4)">
-              <li><a routerLink="/circuits">Package List</a></li>
-              <li><a routerLink="/circuits/sidebar">Package List Sidebar</a></li>
-              <li><a routerLink="/circuits/detail-1">Package Details - Layout I</a></li>
-              <li><a routerLink="/circuits/detail-2">Package Details - Layout II</a></li>
-              <li><a routerLink="/circuits/detail-3">Package Details - Layout III</a></li>
+              <li><a routerLink="/circuits">Tous les Circuits</a></li>
+              <li><a routerLink="/circuits/sidebar">Circuits avec Filtres</a></li>
+              <li><a routerLink="/circuits/detail-1">Détail Circuit</a></li>
             </ul>
           </li>
           <li class="group/step-one">
@@ -304,57 +284,54 @@
     <div class="swiper hero-slider-two">
       <div class="swiper-wrapper">
         <div class="swiper-slide hero-two-single-slide">
-          <img src="assets/images/hero/h2.webp" alt="cv"
+          <img src="assets/images/hero/h1.webp" alt="Mont Cameroun"
             class="z-minus absolute w-full h-full object-cover zoom-image">
           <div class="container">
             <div class="max-w-[850px] mx-auto text-center text-white relative lg:pb-24 pb-20 lg:pt-[220px] pt-36">
               <h1 class="xl:text-7xl lg:text-4xl md:text-2xl text-2xl font-semibold leading-1.2">
-                <span class="animation__char_come_long">Your Adventure Travel</span>
-                <span class="animation__char_come_long"> Expert in Paris. </span>
+                <span class="animation__char_come_long">Votre Expert en Voyages </span>
+                <span class="animation__char_come_long">d'Aventure au Cameroun.</span>
               </h1>
-              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit</p>
+              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">Trekking, safari, culture — découvrez l'Afrique en miniature avec nos guides locaux certifiés.</p>
               <div class="lg:mt-10 mt-7">
-                <a routerLink="/circuits/detail-1" class="btn_primary__v1">
-                  Book Now
+                <a routerLink="/circuits" class="btn_primary__v1">
+                  Découvrir nos Circuits
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide hero-two-single-slide">
-          <img src="assets/images/hero/h3.webp" alt="cv"
+          <img src="assets/images/hero/h2.webp" alt="Kribi Lobé"
             class="z-minus absolute w-full h-full object-cover zoom-image">
           <div class="container">
             <div class="max-w-[850px] mx-auto text-center text-white relative lg:pb-24 pb-20 lg:pt-[220px] pt-36">
               <h1 class="xl:text-7xl lg:text-4xl md:text-2xl text-2xl font-semibold leading-1.2">
-                <span class="animation__char_come_long">Your Adventure Travel</span>
-                <span class="animation__char_come_long"> Expert in Paris. </span>
+                <span class="animation__char_come_long">Kribi & les Chutes de la Lobé </span>
+                <span class="animation__char_come_long">Un Joyau Naturel Unique.</span>
               </h1>
-              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit</p>
+              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">La seule cascade au monde qui se jette directement dans l'océan Atlantique.</p>
               <div class="lg:mt-10 mt-7">
                 <a routerLink="/circuits/detail-1" class="btn_primary__v1">
-                  Book Now
+                  Réserver ce Circuit
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide hero-two-single-slide">
-          <img src="assets/images/hero/h1.webp" alt="cv"
+          <img src="assets/images/hero/h3.webp" alt="Safari Waza"
             class="z-minus absolute w-full h-full object-cover zoom-image">
           <div class="container">
             <div class="max-w-[850px] mx-auto text-center text-white relative lg:pb-24 pb-20 lg:pt-[220px] pt-36">
               <h1 class="xl:text-7xl lg:text-4xl md:text-2xl text-2xl font-semibold leading-1.2">
-                <span class="animation__char_come_long">Your Adventure Travel</span>
-                <span class="animation__char_come_long"> Expert in Paris. </span>
+                <span class="animation__char_come_long">Safari au Parc de Waza  </span>
+                <span class="animation__char_come_long">La Faune Sauvage du Nord.</span>
               </h1>
-              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit</p>
+              <p class="lg:text-[25px] text-2md mt-4 leading-1.7">Éléphants, lions, girafes… Vivez une expérience africaine authentique au cœur de la savane.</p>
               <div class="lg:mt-10 mt-7">
-                <a routerLink="/circuits/detail-1" class="btn_primary__v1">
-                  Book Now
+                <a routerLink="/circuits/sidebar" class="btn_primary__v1">
+                  Explorer les Safaris
                 </a>
               </div>
             </div>
@@ -386,21 +363,23 @@
   <!--========== HERO STYLE TWO END ==========-->
 
   <!--========== ADVANCE SEARCHBAR STYLE START ==========-->
-  <div class="searchbar_style__two pt-17">
+  <div class="searchbar_style__two pt-17 pb-10">
     <div class="max-w-[1570px] mx-auto px-3">
+      <div class="bg-white dark:bg-dark-2 shadow-custom-2 lg:px-10 lg:py-8 px-5 py-6">
+        <p class="text-dark-3 dark:text-dark-5 text-sm font-medium uppercase tracking-widest mb-5 lg:block hidden">Trouvez votre prochain circuit</p>
       <form action="#" class="w-full" autocomplete="off">
         <div class="flex items-center lg:flex-row flex-col space-y-4 lg:space-y-0 lg:space-x-base">
           <div class="relative flex-grow lg:w-auto w-full select_style__two">
             <select class="destination-select" name="state">
-              <option value="0">Destinations</option>
-              <option value="1">New York</option>
-              <option value="2">London</option>
-              <option value="3">Paris</option>
-              <option value="4">Dubai</option>
-              <option value="5">Miami</option>
-              <option value="6">Amsterdam</option>
-              <option value="7">Seattle</option>
-              <option value="8">Las vegas</option>
+              <option value="0">Destination</option>
+              <option value="1">Yaoundé</option>
+              <option value="2">Douala</option>
+              <option value="3">Kribi</option>
+              <option value="4">Limbe</option>
+              <option value="5">Bafoussam</option>
+              <option value="6">Ngaoundéré</option>
+              <option value="7">Maroua</option>
+              <option value="8">Foumban</option>
             </select>
             <div class="absolute top-1/2 -translate-y-1/2 left-5 lg:left-base max-w-[20px] text-primary-1">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -415,7 +394,7 @@
             </div>
           </div>
           <div class="relative  flex-grow lg:w-auto w-full">
-            <input type="text" name="daterange" value="Select Date"
+            <input type="text" name="daterange" value="Sélectionner une date"
               class="w-full bg-transparent border border-primary-1 outline-0 lg:h-17 h-14 pr-4 lg:pl-[60px] pl-[50px] lg:text-md text-base text-primary-1 placeholder:text-primary-1 font-medium" />
             <div class="absolute top-1/2 -translate-y-1/2 left-5 lg:left-base max-w-[20px] text-primary-1">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -434,13 +413,13 @@
           </div>
           <div class="relative select_style__two flex-grow lg:w-auto w-full">
             <select class="destination-select" name="state">
-              <option value="0">Tour Type</option>
-              <option value="1">Honeymoon</option>
-              <option value="2">Hill Traking</option>
-              <option value="3">Day outing</option>
-              <option value="4">River Cruise</option>
-              <option value="5">Summer Vacation</option>
-              <option value="5">Others</option>
+              <option value="0">Type de Circuit</option>
+              <option value="1">Tourisme d'Aventure</option>
+              <option value="2">Écotourisme</option>
+              <option value="3">Culture & Traditions</option>
+              <option value="4">Randonnée & Trek</option>
+              <option value="5">Safari Nature</option>
+              <option value="6">Voyage de Groupe</option>
             </select>
             <div class="absolute top-1/2 -translate-y-1/2 left-5 lg:left-base max-w-[20px] text-primary-1">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -452,9 +431,10 @@
             </div>
           </div>
           <button type="submit"
-            class="block lg:w-auto w-full flex-grow text-center bg-primary-1 lg:h-17 h-14  text-white font-medium text-md hover:bg-[#d0aa6c] duration-300">FIND NOW</button>
+            class="block lg:w-auto w-full flex-grow text-center bg-primary-1 lg:h-17 h-14  text-white font-medium text-md hover:bg-[#d0aa6c] duration-300">RECHERCHER</button>
         </div>
       </form>
+      </div>
     </div>
   </div>
   <!--========== ADVANCE SEARCHBAR STYLE END ==========-->

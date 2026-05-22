@@ -401,6 +401,42 @@ Customiz Third-Party Plugins
 .select_style__two  .select2-container{
   @apply !w-full;
 }
+/* Native select fallback quand Select2 n'est pas initialisé */
+.select_style__two select {
+  @apply lg:h-17 h-14 w-full bg-transparent border border-primary-1 text-primary-1 lg:pl-[60px] pl-[50px] pr-8 font-medium outline-none appearance-none cursor-pointer transition-all duration-300;
+}
+.select_style__two select:focus {
+  outline: none;
+  border-color: #E8604C;
+  box-shadow: 0 0 0 3px rgba(232, 96, 76, 0.15);
+}
+.select_style__two select option {
+  @apply text-dark-1 bg-white;
+}
+.select_style__two::after {
+  content: '\f282';
+  font-family: 'bootstrap-icons';
+  @apply absolute top-1/2 right-4 -translate-y-1/2 text-primary-1 pointer-events-none;
+}
+/* Focus fluide sur le champ date */
+.searchbar_style__two input[type="text"] {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.searchbar_style__two input[type="text"]:focus {
+  outline: none;
+  border-color: #E8604C;
+  box-shadow: 0 0 0 3px rgba(232, 96, 76, 0.15);
+}
+/* Bouton RECHERCHER - transition fluide */
+.searchbar_style__two button[type="submit"] {
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+.searchbar_style__two button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+.searchbar_style__two button[type="submit"]:active {
+  transform: translateY(0);
+}
 .select_style__three .select2 .selection .select2-selection{
   @apply lg:h-[54px] h-12 px-5 py-2 rounded-none flex items-center border border-stock-1 outline-none focus:border-primary-1
 }
@@ -733,6 +769,18 @@ html:not(.dark) .herder-variant-two .mobil-menu {
 html:not(.dark) .header-style.herder-variant-two.sticky {
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+html:not(.dark) .herder-variant-two:not(.sticky) .nav-link {
+  color: white;
+}
+html:not(.dark) .herder-variant-two:not(.sticky) .nav-link.has-dropdown::before {
+  color: white;
+}
+html:not(.dark) .herder-variant-two:not(.sticky) .hamburger span {
+  background-color: white;
+}
+html:not(.dark) .herder-variant-two:not(.sticky) .desktop-menu .text-dark-1 {
+  color: white;
 }
 html:not(.dark) .common-pagination .swiper-pagination-bullet {
   background-color: #7B7B7B;
