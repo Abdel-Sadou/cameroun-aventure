@@ -347,12 +347,34 @@
                     </svg>
                 </a>
             </div>
-            <div class="bg-primary-1 bg-[url('assets/images/backgrounds/package-bg.png')] bg-center bg-no-repeat bg-cover text-center relative p-base flex items-center justify-center wow fadeInUp" data-wow-delay="0.4s">
-                <div>
-                    <h3 class="lg:text-3xl text-2xl leading-1.5 text-white font-medium">Réservez maintenant et économisez 20%</h3>
-                    <a routerLink="/circuits/sidebar" class="btn_primary__v1 border border-white mt-base">Voir Tous les Circuits</a>
+            <div class="group/card package-card-style-one wow fadeInUp" data-wow-delay="0.4s">
+                <div class="overflow-hidden relative">
+                    <a routerLink="/circuits/detail-1">
+                        <img src="assets/images/packages/p1-6.webp" alt="package-img" class="w-full group-hover/card:scale-105 duration-300">
+                    </a>
+                    <span class="absolute inline-block top-5 right-5 text-sm text-white rounded-full bg-status-success py-1 px-3">Exclusif</span>
                 </div>
+                <h3 class="card-title-alpha group-hover/card:text-primary-1 lg:mt-6 mt-5"><a routerLink="/circuits/detail-1">Chefferies de l'Ouest — Pays Bamiléké & Palais Royaux</a></h3>
+                <ul class="flex flex-wrap lg:text-[15px] text-[13px] font-medium text-dark-2 mt-4 package-feature">
+                    <li><span class="text-primary-1"><i class="bi bi-people"></i></span><span>12 Personnes</span></li>
+                    <li><span class="text-primary-1"><i class="bi bi-clock"></i></span><span>03 Jours</span></li>
+                    <li><span class="text-primary-1"><i class="bi bi-coin"></i></span><span>Dès <span class="text-primary-1 font-bold">95 000 FCFA</span></span></li>
+                </ul>
+                <a routerLink="/circuits/detail-1" class="package-explore-btn group/btn">
+                    <span class="mr-2">Découvrir</span>
+                    <svg class="group-hover/btn:translate-x-2 duration-200 " width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor" />
+                        <path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
             </div>
+        </div>
+        <div class="text-center mt-base">
+            <a routerLink="/circuits" class="btn_primary__v1">Voir Tous les Circuits
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
         </div>
     </div>
 </div>

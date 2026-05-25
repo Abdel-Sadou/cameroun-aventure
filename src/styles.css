@@ -785,6 +785,24 @@ html:not(.dark) .herder-variant-two:not(.sticky) .desktop-menu .text-dark-1 {
 html:not(.dark) .common-pagination .swiper-pagination-bullet {
   background-color: #7B7B7B;
 }
+html.dark .section-title-v1 {
+  color: #F3F3F3;
+}
+
+/* Pagination témoignages — fond clair */
+.testi-two-pagi .swiper-pagination-bullet {
+  background-color: #DDDDDD !important;
+  opacity: 1;
+}
+.testi-two-pagi .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #E8604C !important;
+}
+.testi-two-pagi .swiper-pagination-bullet::before {
+  border-color: transparent !important;
+}
+.testi-two-pagi .swiper-pagination-bullet-active::before {
+  border-color: #E8604C !important;
+}
 
 .tab {
   display: none;
