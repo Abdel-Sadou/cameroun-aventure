@@ -73,18 +73,13 @@
         <div class="menu-one">
           <ul class="flex items-center nav-list">
             <li class="group/step-one">
-              <a href="javascript:void(0)" class="nav-link has-dropdown">Blog</a>
-              <ul class="nav-dropdown">
-                <li><a routerLink="/blog">Tous les Articles</a></li>
-                <li><a routerLink="/blog/detail">Détail Article</a></li>
-              </ul>
-            </li>
-            <li class="group/step-one">
               <a href="javascript:void(0)" class="nav-link has-dropdown">Circuits</a>
               <ul class="nav-dropdown">
                 <li><a routerLink="/circuits">Tous les Circuits</a></li>
-                <li><a routerLink="/circuits/sidebar">Circuits avec Filtres</a></li>
-                <li><a routerLink="/circuits/detail-1">Détail Circuit</a></li>
+                <li><a routerLink="/circuits">Trekking & Aventure</a></li>
+                <li><a routerLink="/circuits">Safari & Faune Sauvage</a></li>
+                <li><a routerLink="/circuits">Circuits Culturels</a></li>
+                <li><a routerLink="/circuits">Séjours Côtiers</a></li>
               </ul>
             </li>
             <li>
@@ -97,7 +92,7 @@
       <div class="basis-[20%] flex justify-end items-center">
         <!-- Bouton IA -->
         <button (click)="showAIModal = true"
-          class="relative inline-flex items-center gap-1.5 px-4 py-2 mr-5 bg-primary-1 text-white text-sm rounded hover:bg-primary-2 transition-all duration-300 group normal-case tracking-normal shrink-0">
+          class="relative inline-flex items-center gap-1.5 px-4 py-2 mr-5 bg-gradient-to-r from-violet-600 to-indigo-500 text-white text-sm rounded hover:from-violet-500 hover:to-indigo-400 transition-all duration-300 group normal-case tracking-normal shrink-0">
           <span class="absolute -top-2 -right-1.5 bg-amber-400 text-[8px] text-dark-1 font-black px-1 py-[1px] rounded-full leading-none animate-pulse uppercase tracking-wide">Bientôt</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300 group-hover:scale-110 shrink-0">
             <path d="M12 2C12 2 13.2 7.8 18 9.5C13.2 11.2 12 17 12 17C12 17 10.8 11.2 6 9.5C10.8 7.8 12 2 12 2Z"/>
@@ -182,35 +177,13 @@
             <a routerLink="/about" class="nav-link nav-link-sm">À Propos</a>
           </li>
           <li class="group/step-one">
-            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(2)">Destinations</a>
-            <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(2)">
-              <li><a routerLink="/destinations">Yaoundé & Centre</a></li>
-              <li><a routerLink="/destinations">Kribi & Littoral</a></li>
-              <li><a routerLink="/destinations">Mont Cameroun</a></li>
-              <li><a routerLink="/destinations">Parc de Waza</a></li>
-              <li><a routerLink="/destinations">Grand Nord</a></li>
-              <li><a routerLink="/destinations">Ngaoundéré</a></li>
-              <li><a routerLink="/destinations">Forêt du Dja</a></li>
-              <li><a routerLink="/destinations">Ouest & Bamiléké</a></li>
-              <li><a routerLink="/destinations">Douala</a></li>
-              <li><a routerLink="/destinations">Limbe</a></li>
-              <li><a routerLink="/destinations">Monts Mandara</a></li>
-              <li><a routerLink="/destinations">Lac Tchad</a></li>
-            </ul>
-          </li>
-          <li class="group/step-one">
-            <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(3)">Blog</a>
-            <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(3)">
-              <li><a routerLink="/blog">Tous les Articles</a></li>
-              <li><a routerLink="/blog/detail">Détail Article</a></li>
-            </ul>
-          </li>
-          <li class="group/step-one">
             <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(4)">Circuits</a>
             <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(4)">
               <li><a routerLink="/circuits">Tous les Circuits</a></li>
-              <li><a routerLink="/circuits/sidebar">Circuits avec Filtres</a></li>
-              <li><a routerLink="/circuits/detail-1">Détail Circuit</a></li>
+              <li><a routerLink="/circuits">Trekking & Aventure</a></li>
+              <li><a routerLink="/circuits">Safari & Faune Sauvage</a></li>
+              <li><a routerLink="/circuits">Circuits Culturels</a></li>
+              <li><a routerLink="/circuits">Séjours Côtiers</a></li>
             </ul>
           </li>
           <li class="group/step-one">
@@ -218,7 +191,7 @@
           </li>
           <li class="pt-2 pb-1 px-2">
             <button (click)="showAIModal = true; isMobileMenuOpen = false"
-              class="relative w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded border border-primary-1 text-primary-1 text-sm font-bold hover:bg-primary-1 hover:text-white transition-all duration-300 active:scale-95 normal-case">
+              class="relative w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-gradient-to-r from-violet-600 to-indigo-500 text-white text-sm font-bold hover:from-violet-500 hover:to-indigo-400 transition-all duration-300 active:scale-95 normal-case">
               <span class="absolute -top-2 right-4 bg-amber-400 text-[8px] text-dark-1 font-black px-1.5 py-[1px] rounded-full leading-none animate-pulse uppercase">Bientôt</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C12 2 13.2 7.8 18 9.5C13.2 11.2 12 17 12 17C12 17 10.8 11.2 6 9.5C10.8 7.8 12 2 12 2Z"/>
