@@ -1,4 +1,302 @@
-<app-preloader />
-<app-header />
-<div class="container py-20 text-center"><h2>About - Coming Soon</h2></div>
-<app-footer />
+<!--========== BREADCRUMB STYLE START ==========-->
+<div class="paralax-container lg:py-36 py-20 relative overflow-hidden before:absolute before:content-[''] before:inset-0 before:bg-[#030610] before:bg-opacity-60 before:z-1">
+  <div class="jarallax absolute inset-0" data-jarallax>
+    <img class="jarallax-img" src="assets/images/backgrounds/breadcrumb-bg.webp" alt="Cameroun Aventure" />
+  </div>
+  <img src="assets/images/illustration/breadcrunb__shape.png" alt="" class="absolute bottom-0 left-0 z-1 lg:w-[12.5%] w-[20%]">
+  <img src="assets/images/illustration/bird-illustration-w.png" alt="" class="absolute top-[10%] right-[4%] z-1 w-[7.5%]">
+  <div class="container relative z-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li><a routerLink="/">Accueil</a></li>
+        <li class="active_page">À Propos</li>
+      </ol>
+    </nav>
+    <h2 class="xl:text-[54px] mt-2 lg:text-4xl md:text-2xl text-[30px] text-white leading-[1.3] font-medium max-w-[640px]">
+      Votre Spécialiste du Voyage Authentique au Cameroun
+    </h2>
+  </div>
+</div>
+<!--========== BREADCRUMB STYLE END ==========-->
+
+<!--========== ABOUT US STYLE ONE START ==========-->
+<div class="relative z-1 bg-gradient-to-t to-[#FFF1EC] from-white lg:pt-30 pt-24">
+  <div class="absolute top-1/2 -translate-y-1/2 right-0 max-w-[14%] z-minus lg:inline-block hidden">
+    <img src="assets/images/illustration/tree-illustration.png" alt="">
+  </div>
+  <div class="absolute top-[5%] left-[1%] max-w-[9%] z-minus lg:inline-block hidden">
+    <img src="assets/images/illustration/bird-illustration.png" alt="">
+  </div>
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-base items-center">
+      <div class="relative wow fadeInLeft" data-wow-delay="0.2s">
+        <img src="assets/images/about/about1-1.webp" alt="Équipe Cameroun Aventure">
+      </div>
+      <div>
+        <h5 class="section-sub-title-v1">Qui Sommes-Nous</h5>
+        <h2 class="section-title-v1 max-w-xl">Experts du Voyage au Cameroun depuis 2008</h2>
+        <div class="mt-7 xl:pl-24 lg:pl-20 relative before:content-[''] before:left-0 before:top-4 before:bg-[#d9d9d9] before:w-[10%] before:h-[1px] lg:before:absolute">
+          <p class="regular-text-v1">Fondée à Yaoundé en 2008, Cameroun Aventure est une agence de voyage locale spécialisée dans les circuits authentiques et l'écotourisme. Nous connectons voyageurs du monde entier aux merveilles de l'Afrique en miniature.</p>
+          <h5 class="font-sans text-dark-1 text-md font-medium mt-4">Parlez à nos experts au <a href="tel:+237699000000" class="text-primary-1">+237 699 000 000</a></h5>
+        </div>
+        <ul class="pt-6 lg:text-md text-base">
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 flex-shrink-0 text-2md"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Guides locaux certifiés, natifs des régions visitées</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 flex-shrink-0 text-2md"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Plus de 16 ans d'expérience et +5 000 voyageurs satisfaits</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 flex-shrink-0 text-2md"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Circuits sur mesure, devis personnalisés en 24h</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 flex-shrink-0 text-2md"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Engagement pour le tourisme responsable et communautaire</span>
+          </li>
+        </ul>
+        <div class="mt-10">
+          <a routerLink="/circuits" class="btn_primary__v1">
+            Voir nos Circuits
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chiffres clés -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-base mt-17 pb-17 border-b border-stock-1">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h3 class="xl:text-5xl text-4xl font-bold text-primary-1">16+</h3>
+        <p class="text-dark-3 font-medium mt-2">Années d'expérience</p>
+      </div>
+      <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+        <h3 class="xl:text-5xl text-4xl font-bold text-primary-1">5 000+</h3>
+        <p class="text-dark-3 font-medium mt-2">Voyageurs satisfaits</p>
+      </div>
+      <div class="text-center wow fadeInUp" data-wow-delay="0.3s">
+        <h3 class="xl:text-5xl text-4xl font-bold text-primary-1">30+</h3>
+        <p class="text-dark-3 font-medium mt-2">Circuits disponibles</p>
+      </div>
+      <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+        <h3 class="xl:text-5xl text-4xl font-bold text-primary-1">12</h3>
+        <p class="text-dark-3 font-medium mt-2">Guides certifiés</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--========== ABOUT US STYLE ONE END ==========-->
+
+<!--========== FEATURED PACKAGE STYLE ONE START ==========-->
+<div class="featured_package__style lg:pt-30 pt-24 relative z-1">
+  <div class="absolute top-[10%] left-[2%] max-w-[9%] z-minus lg:inline-block hidden">
+    <img src="assets/images/illustration/leaf-illustration.png" alt="">
+  </div>
+  <div class="container">
+    <div class="text-center lg:pb-[60px] pb-[40px]">
+      <h5 class="section-sub-title-v1">Nos Circuits Phares</h5>
+      <h2 class="section-title-v1">Deux Expériences Inoubliables</h2>
+    </div>
+  </div>
+  <div class="px-3 overflow-hidden">
+    <div class="flex 2xl:gap-x-12 gap-base lg:items-center col-span-10 2xl:ml-right-container lg:flex-row flex-col">
+      <div class="xl:max-w-xl lg:max-w-lg shrink-0 order-2 lg:order-1">
+        <h5 class="text-2md text-primary-1 leading-1.5 font-sans font-bold">À partir de 180 000 FCFA</h5>
+        <h3 class="font-serif font-medium lg:text-xl text-lg leading-1.35 mt-2 text-dark-1">Trekking Mont Cameroun — Le Toit de l'Afrique de l'Ouest</h3>
+        <p class="text-dark-2 leading-1.7 font-medium mt-5">Une ascension mythique vers les 4 095 m du volcan actif le plus haut d'Afrique de l'Ouest, avec vue imprenable sur le Golfe de Guinée.</p>
+        <p class="regular-text-v1 mt-[14px]">Partez depuis Buea avec nos guides certifiés. Traversez des zones écologiques uniques — forêt tropicale, savane d'altitude, désert volcanique. Une aventure physique et spirituelle qui marque pour la vie.</p>
+        <ul class="pt-2 lg:text-md text-base">
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">4 jours / 3 nuits, guide certifié inclus</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Hébergement refuge en altitude + nuit Buea</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Porteurs, repas et équipement de sécurité inclus</span>
+          </li>
+        </ul>
+        <div class="mt-12">
+          <a routerLink="/circuits/detail-1" class="btn_primary__v1">
+            Réserver ce Circuit
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 wow fadeInRight">
+        <img src="assets/images/packages/fp1-1.webp" alt="Mont Cameroun Trek">
+      </div>
+    </div>
+    <div class="flex justify-end 2xl:gap-x-12 gap-base mt-17 lg:items-center col-span-10 2xl:mr-right-container lg:flex-row flex-col">
+      <div class="wow fadeInLeft">
+        <img src="assets/images/packages/fp1-2.webp" alt="Safari Parc de Waza">
+      </div>
+      <div class="xl:max-w-xl lg:max-w-lg shrink-0">
+        <h5 class="text-2md text-primary-1 leading-1.5 font-sans font-bold">À partir de 250 000 FCFA</h5>
+        <h3 class="font-serif font-medium lg:text-xl text-lg leading-1.35 mt-2 text-dark-1">Safari Parc de Waza — Les Grandes Savanes du Grand Nord</h3>
+        <p class="text-dark-2 leading-1.7 font-medium mt-5">Partez à la rencontre des lions, éléphants, girafes et hippos dans l'un des parcs naturels les plus riches d'Afrique centrale.</p>
+        <p class="lg:text-base text-sm font-sans text-dark-3 leading-1.9 mt-[14px]">Le circuit intègre le légendaire train de nuit Yaoundé-Ngaoundéré, une traversée des Monts Mandara et la découverte des villages Mousgoum. Une immersion totale dans l'Extrême-Nord camerounais.</p>
+        <ul class="pt-2 lg:text-md text-base">
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">5 jours / 4 nuits avec train de nuit inclus</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">4x4 et guide safari spécialisé grande faune</span>
+          </li>
+          <li class="flex items-center font-sans text-dark-3 mt-4">
+            <div class="text-primary-1 text-2md flex-shrink-0"><i class="bi bi-check-circle"></i></div>
+            <span class="ml-3">Hébergement lodge + nuit Maroua</span>
+          </li>
+        </ul>
+        <div class="mt-12">
+          <a routerLink="/circuits/detail-3" class="btn_primary__v1">
+            Réserver ce Circuit
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--========== FEATURED PACKAGE STYLE ONE END ==========-->
+
+<!--========== TESTIMONIAL STYLE ONE START ==========-->
+<div class="testimonial_style__one lg:pt-30 pt-24 relative">
+  <div class="container relative">
+    <div class="text-center lg:pb-[60px] pb-[40px]">
+      <h5 class="section-sub-title-v1">Témoignages</h5>
+      <h2 class="section-title-v1">Ce que Disent Nos Voyageurs</h2>
+    </div>
+    <div class="swiper testimonial-slider-one">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="max-w-[970px] text-center mx-auto">
+            <p class="font-serif text-2md lg:text-[25px] text-dark-2 leading-1.8 italic">"L'ascension du Mont Cameroun a été l'expérience la plus marquante de ma vie. Notre guide Théodore connaissait chaque sentier, chaque plante. Professionnalisme et passion au rendez-vous."</p>
+            <h5 class="lg:text-[25px] text-2md font-semibold text-dark-1 mt-base">Sophie Marchand</h5>
+            <p class="text-dark-3 text-base mt-1">Paris, France — Circuit Mont Cameroun</p>
+            <div class="relative inline-block mt-6">
+              <div class="h-[38px] w-[38px] bg-primary-1 rounded-full border-2 border-white absolute top-0 left-0 -translate-x-1/3 text-white flex justify-center items-center">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.95 0.184651C4.90078 0.240901 3.97266 1.40457 2.88633 2.77215C1.32187 4.74793 0.914062 5.28582 0.914062 5.36317C0.914062 5.44754 0.966797 5.50731 1.21992 5.71824C1.39219 5.85535 1.75078 6.19637 2.02148 6.46707C3.11836 7.5745 3.76172 8.65731 3.98672 9.76473C4.06055 10.1163 4.06055 10.8089 3.98672 11.2378C3.76875 12.5245 2.91445 14.0679 1.71563 15.3475C1.51523 15.5585 1.44141 15.6639 1.44141 15.7307C1.44141 15.9593 1.60313 15.9628 2.12344 15.7448C3.6 15.1225 5.08359 14.1347 6.16992 13.0448C7.57617 11.6386 8.39883 10.0987 8.73984 8.24598C8.83828 7.72215 8.83125 6.72723 8.72578 6.21395C8.32149 4.21707 7.2 2.16395 5.58984 0.465901C5.18906 0.0440264 5.11172 0.0123854 4.95 0.184651Z" fill="currentColor"/><path d="M13.2117 0.184724C13.1625 0.240973 12.2344 1.40464 11.148 2.77222C9.58359 4.748 9.17578 5.2859 9.17578 5.36324C9.17578 5.44761 9.22852 5.50738 9.48516 5.71832C9.65391 5.85543 10.0125 6.19644 10.2832 6.46714C11.3801 7.57457 12.0234 8.65738 12.2484 9.7648C12.3223 10.1164 12.3223 10.8089 12.2484 11.2378C12.1816 11.6211 12.0023 12.2117 11.8125 12.6476C11.4434 13.4984 10.698 14.5882 9.93164 15.3968C9.76992 15.5691 9.70313 15.6675 9.70313 15.7343C9.70313 15.9593 9.86484 15.9628 10.3852 15.7449C12.2098 14.9785 14.0449 13.6355 15.1594 12.2539C15.968 11.2519 16.5832 10.032 16.8715 8.86129C17.0297 8.22144 17.0648 7.92965 17.0648 7.2441C17.0648 6.64996 17.0578 6.52691 16.9699 6.13316C16.5445 4.14332 15.4441 2.14293 13.8516 0.465974C13.4508 0.0440989 13.3734 0.0124578 13.2117 0.184724Z" fill="currentColor"/></svg>
+              </div>
+              <img src="assets/images/touriest/testi-avater.png" alt="Sophie Marchand" class="h-20 w-20 object-cover rounded-full">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="max-w-[970px] text-center mx-auto">
+            <p class="font-serif text-2md lg:text-[25px] text-dark-2 leading-1.8 italic">"Le safari à Waza était époustouflant — lions au petit matin, éléphants à quelques mètres. Le train de nuit Yaoundé-Ngaoundéré était une aventure en soi. Organisation impeccable du début à la fin."</p>
+            <h5 class="lg:text-[25px] text-2md font-semibold text-dark-1 mt-base">Jean-Pierre Dubois</h5>
+            <p class="text-dark-3 text-base mt-1">Lyon, France — Safari Parc de Waza</p>
+            <div class="relative inline-block mt-6">
+              <div class="h-[38px] w-[38px] bg-primary-1 rounded-full border-2 border-white absolute top-0 left-0 -translate-x-1/3 text-white flex justify-center items-center">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.95 0.184651C4.90078 0.240901 3.97266 1.40457 2.88633 2.77215C1.32187 4.74793 0.914062 5.28582 0.914062 5.36317C0.914062 5.44754 0.966797 5.50731 1.21992 5.71824C1.39219 5.85535 1.75078 6.19637 2.02148 6.46707C3.11836 7.5745 3.76172 8.65731 3.98672 9.76473C4.06055 10.1163 4.06055 10.8089 3.98672 11.2378C3.76875 12.5245 2.91445 14.0679 1.71563 15.3475C1.51523 15.5585 1.44141 15.6639 1.44141 15.7307C1.44141 15.9593 1.60313 15.9628 2.12344 15.7448C3.6 15.1225 5.08359 14.1347 6.16992 13.0448C7.57617 11.6386 8.39883 10.0987 8.73984 8.24598C8.83828 7.72215 8.83125 6.72723 8.72578 6.21395C8.32149 4.21707 7.2 2.16395 5.58984 0.465901C5.18906 0.0440264 5.11172 0.0123854 4.95 0.184651Z" fill="currentColor"/><path d="M13.2117 0.184724C13.1625 0.240973 12.2344 1.40464 11.148 2.77222C9.58359 4.748 9.17578 5.2859 9.17578 5.36324C9.17578 5.44761 9.22852 5.50738 9.48516 5.71832C9.65391 5.85543 10.0125 6.19644 10.2832 6.46714C11.3801 7.57457 12.0234 8.65738 12.2484 9.7648C12.3223 10.1164 12.3223 10.8089 12.2484 11.2378C12.1816 11.6211 12.0023 12.2117 11.8125 12.6476C11.4434 13.4984 10.698 14.5882 9.93164 15.3968C9.76992 15.5691 9.70313 15.6675 9.70313 15.7343C9.70313 15.9593 9.86484 15.9628 10.3852 15.7449C12.2098 14.9785 14.0449 13.6355 15.1594 12.2539C15.968 11.2519 16.5832 10.032 16.8715 8.86129C17.0297 8.22144 17.0648 7.92965 17.0648 7.2441C17.0648 6.64996 17.0578 6.52691 16.9699 6.13316C16.5445 4.14332 15.4441 2.14293 13.8516 0.465974C13.4508 0.0440989 13.3734 0.0124578 13.2117 0.184724Z" fill="currentColor"/></svg>
+              </div>
+              <img src="assets/images/touriest/testi-avater-2.png" alt="Jean-Pierre Dubois" class="h-20 w-20 object-cover rounded-full">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="max-w-[970px] text-center mx-auto">
+            <p class="font-serif text-2md lg:text-[25px] text-dark-2 leading-1.8 italic">"Kribi avec mes enfants : les chutes de la Lobé tombent dans l'océan, la pirogue avec les pygmées Baka... mes enfants en parlent encore. Une agence qui mérite toute votre confiance."</p>
+            <h5 class="lg:text-[25px] text-2md font-semibold text-dark-1 mt-base">Marie-Claire Nkoma</h5>
+            <p class="text-dark-3 text-base mt-1">Douala, Cameroun — Circuit Kribi & Lobé</p>
+            <div class="relative inline-block mt-6">
+              <div class="h-[38px] w-[38px] bg-primary-1 rounded-full border-2 border-white absolute top-0 left-0 -translate-x-1/3 text-white flex justify-center items-center">
+                <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.95 0.184651C4.90078 0.240901 3.97266 1.40457 2.88633 2.77215C1.32187 4.74793 0.914062 5.28582 0.914062 5.36317C0.914062 5.44754 0.966797 5.50731 1.21992 5.71824C1.39219 5.85535 1.75078 6.19637 2.02148 6.46707C3.11836 7.5745 3.76172 8.65731 3.98672 9.76473C4.06055 10.1163 4.06055 10.8089 3.98672 11.2378C3.76875 12.5245 2.91445 14.0679 1.71563 15.3475C1.51523 15.5585 1.44141 15.6639 1.44141 15.7307C1.44141 15.9593 1.60313 15.9628 2.12344 15.7448C3.6 15.1225 5.08359 14.1347 6.16992 13.0448C7.57617 11.6386 8.39883 10.0987 8.73984 8.24598C8.83828 7.72215 8.83125 6.72723 8.72578 6.21395C8.32149 4.21707 7.2 2.16395 5.58984 0.465901C5.18906 0.0440264 5.11172 0.0123854 4.95 0.184651Z" fill="currentColor"/><path d="M13.2117 0.184724C13.1625 0.240973 12.2344 1.40464 11.148 2.77222C9.58359 4.748 9.17578 5.2859 9.17578 5.36324C9.17578 5.44761 9.22852 5.50738 9.48516 5.71832C9.65391 5.85543 10.0125 6.19644 10.2832 6.46714C11.3801 7.57457 12.0234 8.65738 12.2484 9.7648C12.3223 10.1164 12.3223 10.8089 12.2484 11.2378C12.1816 11.6211 12.0023 12.2117 11.8125 12.6476C11.4434 13.4984 10.698 14.5882 9.93164 15.3968C9.76992 15.5691 9.70313 15.6675 9.70313 15.7343C9.70313 15.9593 9.86484 15.9628 10.3852 15.7449C12.2098 14.9785 14.0449 13.6355 15.1594 12.2539C15.968 11.2519 16.5832 10.032 16.8715 8.86129C17.0297 8.22144 17.0648 7.92965 17.0648 7.2441C17.0648 6.64996 17.0578 6.52691 16.9699 6.13316C16.5445 4.14332 15.4441 2.14293 13.8516 0.465974C13.4508 0.0440989 13.3734 0.0124578 13.2117 0.184724Z" fill="currentColor"/></svg>
+              </div>
+              <img src="assets/images/touriest/testi-avater.png" alt="Marie-Claire Nkoma" class="h-20 w-20 object-cover rounded-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden testi-next lg:inline-block absolute max-w-[70px] right-0 top-1/2 -translate-y-1/2 translate-x-full group text-primary-1">
+      <svg width="79" height="50" viewBox="0 0 79 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="24.25" transform="matrix(1 0 0 -1 29 50)" stroke="currentColor" stroke-width="1.5"/><path class="group-hover:translate-x-2 duration-200" d="M1 25.75C0.585786 25.75 0.25 25.4142 0.25 25C0.25 24.5858 0.585786 24.25 1 24.25L1 25.75ZM58.5303 24.4697C58.8232 24.7626 58.8232 25.2374 58.5303 25.5303L53.7574 30.3033C53.4645 30.5962 52.9896 30.5962 52.6967 30.3033C52.4038 30.0104 52.4038 29.5355 52.6967 29.2426L56.9393 25L52.6967 20.7574C52.4038 20.4645 52.4038 19.9896 52.6967 19.6967C52.9896 19.4038 53.4645 19.4038 53.7574 19.6967L58.5303 24.4697ZM1 24.25L58 24.25L58 25.75L1 25.75L1 24.25Z" fill="currentColor"/></svg>
+    </div>
+    <div class="hidden testi-prev lg:inline-block absolute max-w-[70px] text-primary-1 left-0 top-1/2 -translate-y-1/2 -translate-x-full group">
+      <svg width="79" height="50" viewBox="0 0 79 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="24.25" transform="rotate(-180 25 25)" stroke="currentColor" stroke-width="1.5"/><path class="group-hover:-translate-x-2 duration-200" d="M78 25.75C78.4142 25.75 78.75 25.4142 78.75 25C78.75 24.5858 78.4142 24.25 78 24.25L78 25.75ZM20.4697 24.4697C20.1768 24.7626 20.1768 25.2374 20.4697 25.5303L25.2426 30.3033C25.5355 30.5962 26.0104 30.5962 26.3033 30.3033C26.5962 30.0104 26.5962 29.5355 26.3033 29.2426L22.0607 25L26.3033 20.7574C26.5962 20.4645 26.5962 19.9896 26.3033 19.6967C26.0104 19.4038 25.5355 19.4038 25.2426 19.6967L20.4697 24.4697ZM78 24.25L21 24.25L21 25.75L78 25.75L78 24.25Z" fill="currentColor"/></svg>
+    </div>
+  </div>
+</div>
+<!--========== TESTIMONIAL STYLE ONE END ==========-->
+
+<!--========== GUIDE STYLE START ==========-->
+<div class="lg:pt-30 pt-24 relative">
+  <img src="assets/images/illustration/bird-illustration.png" alt="" class="absolute right-0 top-[12%] max-w-[11%] lg:block hidden">
+  <img src="assets/images/illustration/leaf-illustration.png" alt="" class="absolute left-[2%] top-[40%] max-w-[8%] lg:block hidden">
+  <div class="container">
+    <div class="text-center lg:pb-[60px] pb-[40px]">
+      <h5 class="section-sub-title-v1">Nos Guides</h5>
+      <h2 class="section-title-v1">Rencontrez notre Équipe d'Experts</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-base">
+      <div class="shadow-custom-1 p-6 group wow fadeInUp" data-wow-delay="0.1s">
+        <div class="overflow-hidden">
+          <img src="assets/images/touriest/guide-1.webp" alt="Théodore Mbarga" class="w-full group-hover:scale-105 duration-300">
+        </div>
+        <div class="mt-5">
+          <h4 class="text-dark-1 font-bold leading-[1.35] lg:text-lg text-2md">Théodore Mbarga</h4>
+          <p class="text-dark-3 lg:text-md text-base font-medium mt-1">Guide Trek & Montagne · Buea</p>
+          <ul class="pt-[10px] flex gap-2">
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="shadow-custom-1 p-6 group wow fadeInUp" data-wow-delay="0.2s">
+        <div class="overflow-hidden">
+          <img src="assets/images/touriest/guide-2.webp" alt="Aminatou Bello" class="w-full group-hover:scale-105 duration-300">
+        </div>
+        <div class="mt-5">
+          <h4 class="text-dark-1 font-bold leading-[1.35] lg:text-lg text-2md">Aminatou Bello</h4>
+          <p class="text-dark-3 lg:text-md text-base font-medium mt-1">Guide Safari & Faune · Maroua</p>
+          <ul class="pt-[10px] flex gap-2">
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="shadow-custom-1 p-6 group wow fadeInUp" data-wow-delay="0.3s">
+        <div class="overflow-hidden">
+          <img src="assets/images/touriest/guide-3.webp" alt="Christelle Nanga" class="w-full group-hover:scale-105 duration-300">
+        </div>
+        <div class="mt-5">
+          <h4 class="text-dark-1 font-bold leading-[1.35] lg:text-lg text-2md">Christelle Nanga</h4>
+          <p class="text-dark-3 lg:text-md text-base font-medium mt-1">Guide Côte & Écotourisme · Kribi</p>
+          <ul class="pt-[10px] flex gap-2">
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li class="guide_social__icon"><a href="#"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--========== GUIDE STYLE END ==========-->
+
+<!--========== INSTAGRAM FEED STYLE START ==========-->
+<div class="instagram_feed_style__one lg:pt-30 pt-24">
+  <div class="swiper max-w-[1570px] mx-auto px-3 insta-feed-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><div class="relative overflow-hidden group"><img src="assets/images/instagram/insta-1.webp" alt="instagram" class="w-full"><a href="#" class="insta-feed-icon"><i class="bi bi-instagram"></i></a></div></div>
+      <div class="swiper-slide"><div class="relative overflow-hidden group"><img src="assets/images/instagram/insta-2.webp" alt="instagram" class="w-full"><a href="#" class="insta-feed-icon"><i class="bi bi-instagram"></i></a></div></div>
+      <div class="swiper-slide"><div class="relative overflow-hidden group"><img src="assets/images/instagram/insta-3.webp" alt="instagram" class="w-full"><a href="#" class="insta-feed-icon"><i class="bi bi-instagram"></i></a></div></div>
+      <div class="swiper-slide"><div class="relative overflow-hidden group"><img src="assets/images/instagram/insta-4.webp" alt="instagram" class="w-full"><a href="#" class="insta-feed-icon"><i class="bi bi-instagram"></i></a></div></div>
+      <div class="swiper-slide"><div class="relative overflow-hidden group"><img src="assets/images/instagram/insta-5.webp" alt="instagram" class="w-full"><a href="#" class="insta-feed-icon"><i class="bi bi-instagram"></i></a></div></div>
+    </div>
+  </div>
+</div>
+<!--========== INSTAGRAM FEED STYLE END ==========-->

@@ -1,8 +1,6 @@
-import { Component, OnInit, AfterViewInit, HostListener, inject } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PreloaderComponent } from '../../shared/components/preloader/preloader.component';
-import { ThemeService } from '../../shared/services/theme.service';
 
 declare var Swiper: any;
 declare var WOW: any;
@@ -12,38 +10,11 @@ declare var Fancybox: any;
 @Component({
   selector: 'app-home-dark',
   standalone: true,
-  imports: [CommonModule, RouterLink, PreloaderComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home-dark.component.html'
 })
-export class HomeDarkComponent implements OnInit, AfterViewInit {
-  readonly themeService = inject(ThemeService);
-  isScrolled = false;
-  isMobileMenuOpen = false;
-  openDropdowns: Set<number> = new Set();
+export class HomeDarkComponent implements AfterViewInit {
   activeFaq: number | null = null;
-
-  ngOnInit(): void {}
-
-  @HostListener('window:scroll')
-  onScroll(): void {
-    this.isScrolled = window.scrollY > 50;
-  }
-
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  toggleDropdown(index: number): void {
-    if (this.openDropdowns.has(index)) {
-      this.openDropdowns.delete(index);
-    } else {
-      this.openDropdowns.add(index);
-    }
-  }
-
-  isDropdownOpen(index: number): boolean {
-    return this.openDropdowns.has(index);
-  }
 
   toggleFaq(index: number): void {
     this.activeFaq = this.activeFaq === index ? null : index;
@@ -51,10 +22,6 @@ export class HomeDarkComponent implements OnInit, AfterViewInit {
 
   isFaqOpen(index: number): boolean {
     return this.activeFaq === index;
-  }
-
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   ngAfterViewInit(): void {

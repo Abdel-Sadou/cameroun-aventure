@@ -1,9 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PreloaderComponent } from '../../shared/components/preloader/preloader.component';
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 declare var Swiper: any;
 declare var WOW: any;
@@ -12,7 +9,7 @@ declare var Fancybox: any;
 @Component({
   selector: 'app-circuit-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, PreloaderComponent, HeaderComponent, FooterComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './circuit-detail.component.html'
 })
 export class CircuitDetailComponent implements OnInit, AfterViewInit {
