@@ -20,6 +20,270 @@
 </div>
 <!--========== BREADCRUMB STYLE END ==========-->
 
+<!-- ========== MODE TOGGLE (visible seulement si circuit chargé via API) ========== -->
+@if (apiCircuit) {
+<div class="bg-white py-4 border-b border-gray-100 sticky top-0 z-10 shadow-sm">
+  <div class="container">
+    <div class="flex items-center gap-4 flex-wrap">
+      <div class="flex items-center gap-2 min-w-0">
+        <i class="bi bi-map text-primary-1 shrink-0"></i>
+        <span class="text-dark-2 text-sm font-semibold truncate">{{ apiCircuit.title }}</span>
+      </div>
+      <div class="ml-auto inline-flex rounded border border-gray-200 overflow-hidden shrink-0">
+        <button
+          (click)="mode='devis'"
+          class="px-5 py-2.5 text-sm font-medium transition-colors duration-200"
+          [class.bg-primary-1]="mode==='devis'"
+          [class.text-white]="mode==='devis'"
+          [class.text-dark-3]="mode!=='devis'"
+          [class.hover:bg-gray-50]="mode!=='devis'">
+          <i class="bi bi-file-earmark-text mr-1.5"></i>Demande de devis
+        </button>
+        <button
+          (click)="mode='booking'"
+          class="px-5 py-2.5 text-sm font-medium transition-colors duration-200 border-l border-gray-200"
+          [class.bg-primary-1]="mode==='booking'"
+          [class.text-white]="mode==='booking'"
+          [class.text-dark-3]="mode!=='booking'"
+          [class.hover:bg-gray-50]="mode!=='booking'">
+          <i class="bi bi-calendar2-check mr-1.5"></i>Réserver maintenant
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ========== BOOKING API MODE START ========== -->
+@if (mode === 'booking' && apiCircuit) {
+<div class="lg:pt-20 pt-14 lg:pb-20 pb-14 relative z-1 bg-gradient-to-t to-[#FFF1EC] from-white">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="text-center lg:pb-[50px] pb-[35px]">
+      <h5 class="section-sub-title-v1">Réservation en ligne</h5>
+      <h2 class="section-title-v1">{{ apiCircuit.title }}</h2>
+      <p class="text-dark-3 mt-3 max-w-[600px] mx-auto text-base">
+        <i class="bi bi-clock mr-1"></i>{{ apiCircuit.daysCount }} j / {{ apiCircuit.nightsCount }} n
+        &nbsp;·&nbsp;
+        <i class="bi bi-geo-alt mr-1"></i>{{ apiCircuit.region }}
+        &nbsp;·&nbsp;
+        <span class="text-primary-1 font-semibold">À partir de {{ apiCircuit.price | number:'1.0-0' }} FCFA / pers.</span>
+      </p>
+    </div>
+
+    <!-- Succès -->
+    @if (bookingSuccess) {
+    <div class="max-w-[640px] mx-auto text-center py-16 px-8 bg-white shadow-custom-1">
+      <div class="w-20 h-20 rounded-full bg-[#17BD8D]/10 text-[#17BD8D] text-4xl flex items-center justify-center mx-auto mb-6">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <h3 class="text-dark-1 text-2xl font-bold mb-3">Réservation créée !</h3>
+      <p class="text-dark-3 text-base mb-8">{{ bookingSuccess }}</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a routerLink="/client-space/my-bookings" class="btn_primary__v1">
+          Mes réservations <i class="bi bi-arrow-right ml-1"></i>
+        </a>
+        <a routerLink="/circuits" class="btn_primary__v2">Voir d'autres circuits</a>
+      </div>
+    </div>
+    }
+
+    @if (!bookingSuccess) {
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+
+      <!-- ── Formulaire (2/3) ──────────────────────────────────── -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- 1. Date de départ -->
+        <div class="bg-white shadow-custom-1 p-8">
+          <h4 class="text-dark-1 text-lg font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-primary-1 text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+            Choisir une date de départ
+          </h4>
+          @if (departureDates.length === 0) {
+          <p class="text-dark-3 text-sm italic">
+            <i class="bi bi-info-circle mr-1"></i>
+            Aucune date disponible actuellement. Contactez-nous pour organiser votre départ.
+          </p>
+          }
+          @if (departureDates.length > 0) {
+          <div class="grid sm:grid-cols-2 gap-3">
+            @for (d of departureDates; track d.id) {
+            <label
+              class="flex items-start gap-3 p-4 border-2 rounded cursor-pointer transition-all duration-200"
+              [class.border-primary-1]="selectedDate?.id === d.id"
+              [class.bg-[#F0F8FF]]="selectedDate?.id === d.id"
+              [class.border-gray-200]="selectedDate?.id !== d.id">
+              <input type="radio" [checked]="selectedDate?.id === d.id" (change)="selectedDate = d" name="selectedDate" class="mt-0.5 accent-[#219FFF] shrink-0">
+              <div>
+                <div class="text-dark-1 font-semibold text-sm">{{ d.departureDate | date:'dd/MM/yyyy' }}</div>
+                <div class="text-dark-3 text-xs mt-0.5">
+                  Retour : {{ d.returnDate | date:'dd/MM/yyyy' }}
+                </div>
+                <div class="mt-1">
+                  <span
+                    class="text-xs font-medium"
+                    [class.text-[#17BD8D]]="d.availableSpots > 3"
+                    [class.text-orange-500]="d.availableSpots <= 3 && d.availableSpots > 0">
+                    <i class="bi bi-people mr-1"></i>{{ d.availableSpots }} place{{ d.availableSpots > 1 ? 's' : '' }} disponible{{ d.availableSpots > 1 ? 's' : '' }}
+                  </span>
+                </div>
+                @if (d.priceOverride) {
+                <div class="text-primary-1 font-bold text-sm mt-1">{{ d.priceOverride | number:'1.0-0' }} FCFA / pers.</div>
+                }
+              </div>
+            </label>
+            }
+          </div>
+          }
+        </div>
+
+        <!-- 2. Participants -->
+        <div class="bg-white shadow-custom-1 p-8">
+          <h4 class="text-dark-1 text-lg font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-primary-1 text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+            Participants ({{ participants.length }})
+          </h4>
+
+          @for (p of participants; track $index; let i = $index) {
+          <div class="border border-gray-200 rounded p-5 mb-4">
+            <div class="flex items-center justify-between mb-4">
+              <h5 class="text-dark-2 font-semibold text-sm">
+                <i class="bi bi-person-fill mr-2 text-primary-1"></i>Participant {{ i + 1 }}
+              </h5>
+              @if (i > 0) {
+              <button type="button" (click)="removeParticipant(i)"
+                class="text-red-400 hover:text-red-600 text-xs font-medium transition-colors duration-200">
+                <i class="bi bi-trash mr-1"></i>Supprimer
+              </button>
+              }
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">Prénom <span class="text-red-500">*</span></label>
+                <input type="text" [(ngModel)]="p.firstName" [name]="'firstName_' + i" placeholder="Jean" class="input_style__primary text-sm">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">Nom <span class="text-red-500">*</span></label>
+                <input type="text" [(ngModel)]="p.lastName" [name]="'lastName_' + i" placeholder="Dupont" class="input_style__primary text-sm">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">Email</label>
+                <input type="email" [(ngModel)]="p.email" [name]="'email_' + i" placeholder="jean@email.com" class="input_style__primary text-sm">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">Téléphone</label>
+                <input type="tel" [(ngModel)]="p.phone" [name]="'phone_' + i" placeholder="+237 6XX XXX XXX" class="input_style__primary text-sm">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">N° Passeport</label>
+                <input type="text" [(ngModel)]="p.passportNumber" [name]="'passport_' + i" placeholder="AB123456" class="input_style__primary text-sm">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="text-dark-2 text-xs font-medium mb-1 block">Date de naissance</label>
+                <input type="date" [(ngModel)]="p.dateOfBirth" [name]="'dob_' + i" class="input_style__primary text-sm">
+              </div>
+            </div>
+          </div>
+          }
+
+          <button type="button" (click)="addParticipant()"
+            class="flex items-center gap-2 text-primary-1 text-sm font-semibold hover:underline mt-1 transition-colors duration-200">
+            <i class="bi bi-plus-circle-fill text-base"></i>Ajouter un participant
+          </button>
+        </div>
+
+        <!-- Erreur -->
+        @if (bookingError) {
+        <div class="bg-red-50 border border-red-200 text-red-700 px-5 py-4 rounded flex items-start gap-3">
+          <i class="bi bi-exclamation-triangle-fill shrink-0 mt-0.5"></i>
+          <span class="text-sm">{{ bookingError }}</span>
+        </div>
+        }
+
+        <!-- Submit -->
+        <button
+          type="button"
+          (click)="onSubmitBooking()"
+          [disabled]="isBookingLoading || !selectedDate"
+          class="btn_primary__v1 w-full justify-center text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed">
+          @if (isBookingLoading) {
+          <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          Création en cours...
+          } @else {
+          <i class="bi bi-calendar2-check-fill mr-2"></i>Confirmer la réservation
+          }
+        </button>
+        <p class="text-dark-3 text-xs text-center mt-2">
+          <i class="bi bi-shield-check mr-1 text-[#17BD8D]"></i>
+          Réservation sécurisée — acompte uniquement après confirmation de votre place
+        </p>
+
+      </div>
+
+      <!-- ── Récapitulatif (1/3) ───────────────────────────────── -->
+      <div class="lg:col-span-1 sticky top-28">
+        <div class="bg-white shadow-custom-1 p-6 mb-5">
+          <h5 class="text-dark-1 font-bold text-md mb-4 pb-3 border-b border-gray-100">
+            <i class="bi bi-receipt mr-2 text-primary-1"></i>Récapitulatif
+          </h5>
+          <h4 class="text-dark-1 font-semibold text-sm mb-3">{{ apiCircuit.title }}</h4>
+          <ul class="space-y-2 text-sm text-dark-3 mb-4">
+            <li><i class="bi bi-clock mr-2 text-primary-1"></i>{{ apiCircuit.daysCount }} j / {{ apiCircuit.nightsCount }} n</li>
+            <li><i class="bi bi-geo-alt mr-2 text-primary-1"></i>{{ apiCircuit.region }}</li>
+            <li>
+              <i class="bi bi-people mr-2 text-primary-1"></i>
+              {{ participants.length }} participant{{ participants.length > 1 ? 's' : '' }}
+            </li>
+            @if (selectedDate) {
+            <li class="text-primary-1 font-medium">
+              <i class="bi bi-calendar2 mr-2"></i>{{ selectedDate.departureDate | date:'dd/MM/yyyy' }}
+            </li>
+            }
+          </ul>
+          <div class="pt-3 border-t border-gray-100">
+            <div class="flex justify-between items-center">
+              <span class="text-dark-3 text-sm">Prix / pers.</span>
+              <span class="text-primary-1 font-bold text-sm">{{ apiCircuit.price | number:'1.0-0' }} FCFA</span>
+            </div>
+            <div class="flex justify-between items-center mt-2 pt-2 border-t border-dashed border-gray-200">
+              <span class="text-dark-1 font-bold">Estimation</span>
+              <span class="text-primary-1 font-bold text-lg">{{ (apiCircuit.price * participants.length) | number:'1.0-0' }} FCFA</span>
+            </div>
+            <p class="text-dark-3 text-xs mt-2 leading-relaxed">
+              <i class="bi bi-info-circle mr-1"></i>Le prix final sera confirmé après vérification des disponibilités.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact rapide -->
+        <div class="bg-[#030610] p-6 text-white">
+          <h5 class="font-bold text-base mb-3">Questions ?</h5>
+          <p class="text-white/70 text-sm mb-4">Notre équipe vous répond rapidement.</p>
+          <a href="https://wa.me/237694372178" target="_blank" rel="noopener"
+            class="flex items-center gap-2 text-[#25D366] text-sm font-semibold hover:underline mb-2">
+            <i class="bi bi-whatsapp text-lg"></i>(+237) 694 37 21 78
+          </a>
+          <a href="mailto:camerounaventure@yahoo.fr"
+            class="flex items-center gap-2 text-white/70 text-sm hover:text-white duration-200">
+            <i class="bi bi-envelope text-base"></i>camerounaventure&#64;yahoo.fr
+          </a>
+        </div>
+      </div>
+
+    </div>
+    }
+
+  </div>
+</div>
+}
+<!-- ========== BOOKING API MODE END ========== -->
+
+@if (mode === 'devis') {
 <!--========== BOOKING FORM START ==========-->
 <div class="lg:pt-30 pt-24 lg:pb-30 pb-24 relative z-1 bg-gradient-to-t to-[#FFF1EC] from-white">
   <div class="absolute top-[7%] right-0 max-w-[14%] z-minus lg:inline-block hidden">
@@ -425,3 +689,4 @@
   </div>
 </div>
 <!--========== BOOKING FORM END ==========-->
+}
