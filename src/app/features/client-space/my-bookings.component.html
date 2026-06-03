@@ -1,0 +1,154 @@
+<!--========== BREADCRUMB START ==========-->
+<div class="paralax-container lg:py-28 py-16 relative overflow-hidden before:absolute before:content-[''] before:inset-0 before:bg-[#030610] before:bg-opacity-60 before:z-1">
+  <div class="jarallax absolute inset-0" data-jarallax>
+    <img class="jarallax-img" src="assets/images/backgrounds/breadcrumb-bg.webp" alt="Mes réservations" />
+  </div>
+  <div class="container relative z-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="/client-space">Espace client</a></li>
+        <li class="active_page">Mes réservations</li>
+      </ol>
+    </nav>
+    <h2 class="xl:text-4xl mt-2 text-2xl text-white font-medium">Mes Réservations</h2>
+  </div>
+</div>
+<!--========== BREADCRUMB END ==========-->
+
+<!--========== CONTENT START ==========-->
+<div class="lg:pt-20 pt-14 lg:pb-20 pb-14 bg-gray-50">
+  <div class="container">
+
+    <!-- Nav espace client -->
+    <div class="flex items-center gap-3 mb-8 flex-wrap">
+      <a routerLink="/client-space/my-bookings"
+        class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded bg-primary-1 text-white">
+        <i class="bi bi-calendar2-week"></i>Mes réservations
+      </a>
+      <a routerLink="/client-space/profile"
+        class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded border border-gray-200 text-dark-3 hover:border-primary-1 hover:text-primary-1 transition-colors duration-200 bg-white">
+        <i class="bi bi-person-circle"></i>Mon profil
+      </a>
+      <a routerLink="/circuits"
+        class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded border border-gray-200 text-dark-3 hover:border-primary-1 hover:text-primary-1 transition-colors duration-200 bg-white ml-auto">
+        <i class="bi bi-plus-circle"></i>Nouvelle réservation
+      </a>
+    </div>
+
+    <!-- Chargement -->
+    @if (isLoading) {
+    <div class="space-y-4">
+      @for (_ of [1,2,3]; track $index) {
+      <div class="bg-white shadow-sm rounded p-6 animate-pulse">
+        <div class="h-4 bg-gray-200 rounded w-1/4 mb-3"></div>
+        <div class="h-3 bg-gray-100 rounded w-1/2 mb-2"></div>
+        <div class="h-3 bg-gray-100 rounded w-1/3"></div>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Liste vide -->
+    @if (!isLoading && bookings.length === 0) {
+    <div class="bg-white shadow-custom-1 p-16 text-center">
+      <div class="w-20 h-20 rounded-full bg-gray-100 text-gray-400 text-3xl flex items-center justify-center mx-auto mb-5">
+        <i class="bi bi-calendar-x"></i>
+      </div>
+      <h3 class="text-dark-1 text-xl font-bold mb-3">Aucune réservation</h3>
+      <p class="text-dark-3 text-sm mb-8 max-w-[400px] mx-auto">
+        Vous n'avez pas encore de réservation. Découvrez nos circuits et planifiez votre prochaine aventure au Cameroun.
+      </p>
+      <a routerLink="/circuits" class="btn_primary__v1">
+        <i class="bi bi-map mr-2"></i>Voir nos circuits
+      </a>
+    </div>
+    }
+
+    <!-- Tableau -->
+    @if (!isLoading && bookings.length > 0) {
+
+    <!-- Mobile : cards -->
+    <div class="block lg:hidden space-y-4">
+      @for (b of bookings; track b.id) {
+      <div class="bg-white shadow-sm rounded p-5">
+        <div class="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <span class="text-xs text-dark-3 font-mono">{{ b.bookingReference }}</span>
+            <h4 class="text-dark-1 font-semibold text-sm mt-0.5">{{ b.circuitTitle }}</h4>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs font-semibold shrink-0"
+            [class]="getStatusClass(b.status)">
+            <i [class]="'bi ' + getStatusIcon(b.status)"></i>
+            {{ getStatusLabel(b.status) }}
+          </span>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-dark-3 mb-4">
+          <span><i class="bi bi-calendar mr-1"></i>{{ b.departureDate | date:'dd/MM/yyyy' }}</span>
+          <span><i class="bi bi-people mr-1"></i>{{ b.participantsCount }} pers.</span>
+          <span class="ml-auto text-dark-1 font-bold">{{ b.totalPrice | number:'1.0-0' }} FCFA</span>
+        </div>
+        <a [routerLink]="['/client-space/my-bookings', b.bookingReference]"
+          class="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-primary-1 border border-primary-1 rounded hover:bg-primary-1 hover:text-white transition-colors duration-200">
+          Voir le détail <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+      }
+    </div>
+
+    <!-- Desktop : tableau -->
+    <div class="hidden lg:block bg-white shadow-custom-1 overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 border-b border-gray-100">
+          <tr>
+            <th class="text-left text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Référence</th>
+            <th class="text-left text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Circuit</th>
+            <th class="text-left text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Départ</th>
+            <th class="text-left text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Participants</th>
+            <th class="text-left text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Statut</th>
+            <th class="text-right text-dark-2 font-semibold px-6 py-4 text-xs uppercase tracking-wide">Total</th>
+            <th class="px-6 py-4"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (b of bookings; track b.id) {
+          <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors duration-150">
+            <td class="px-6 py-4">
+              <span class="font-mono text-xs text-dark-2 font-semibold">{{ b.bookingReference }}</span>
+            </td>
+            <td class="px-6 py-4">
+              <span class="text-dark-1 font-medium text-sm">{{ b.circuitTitle }}</span>
+            </td>
+            <td class="px-6 py-4 text-dark-3">
+              {{ b.departureDate | date:'dd/MM/yyyy' }}
+            </td>
+            <td class="px-6 py-4 text-dark-3">
+              {{ b.participantsCount }} pers.
+            </td>
+            <td class="px-6 py-4">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border text-xs font-semibold"
+                [class]="getStatusClass(b.status)">
+                <i [class]="'bi ' + getStatusIcon(b.status)"></i>
+                {{ getStatusLabel(b.status) }}
+              </span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <span class="text-dark-1 font-bold">{{ b.totalPrice | number:'1.0-0' }} FCFA</span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <a [routerLink]="['/client-space/my-bookings', b.bookingReference]"
+                class="inline-flex items-center gap-1.5 text-primary-1 text-xs font-semibold hover:underline">
+                Détail <i class="bi bi-arrow-right"></i>
+              </a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    }
+
+  </div>
+</div>
+<!--========== CONTENT END ==========-->
