@@ -1,2 +1,64 @@
-<div class="container py-20 text-center"><h2>Destination List - Coming Soon</h2></div>
+<!--========== PAGE HEADER START ==========-->
+<div class="page_header__area bg-cover bg-center bg-no-repeat relative before:absolute before:content-[''] before:inset-0 before:bg-dark-base before:bg-opacity-60"
+  style="background-image: url('assets/images/destination/d1-1.webp')">
+  <div class="container relative z-1 lg:py-[100px] py-[70px]">
+    <div class="text-center text-white">
+      <h2 class="lg:text-4xl text-2xl font-bold leading-1.3">Nos Destinations</h2>
+      <nav class="flex justify-center items-center mt-4 space-x-2 text-sm font-medium">
+        <a routerLink="/" class="text-white hover:text-primary-1 duration-150">Accueil</a>
+        <span class="text-white opacity-60">/</span>
+        <span class="text-primary-1">Destinations</span>
+      </nav>
+    </div>
+  </div>
+</div>
+<!--========== PAGE HEADER END ==========-->
 
+<!--========== DESTINATIONS LIST START ==========-->
+<div class="lg:py-30 py-24">
+  <div class="container">
+    <div class="text-center mb-14">
+      <h5 class="section-sub-title-v1">Explorez le Cameroun</h5>
+      <h2 class="section-title-v1">Découvrez Toutes Nos Destinations</h2>
+      <p class="text-dark-3 text-base mt-4 max-w-2xl mx-auto">
+        Des plages de Kribi aux savanes du Grand Nord, des forêts équatoriales du Dja aux volcans du Mont Cameroun — le Cameroun est une Afrique en miniature.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-base">
+      @if (isLoading) {
+        @for (i of [1,2,3,4,5,6,7,8]; track i) {
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-[240px] w-full rounded"></div>
+            <div class="mt-4 space-y-2">
+              <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+              <div class="h-3 bg-gray-200 rounded w-1/2 mx-auto"></div>
+            </div>
+          </div>
+        }
+      } @else {
+        @for (dest of destinations; track dest.id) {
+          <div class="group single-destina-tion wow fadeInUp">
+            <div class="overflow-hidden h-[240px]">
+              <img [src]="getImage(dest)" [alt]="dest.name"
+                class="w-full h-full object-cover group-hover:scale-105 duration-300">
+            </div>
+            <div class="bg-white dark:bg-dark-2 text-dark-1 dark:text-white text-center py-5 px-4">
+              <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
+                <a [routerLink]="['/destinations', dest.slug]">{{dest.name}}</a>
+              </h5>
+              <p class="font-medium text-base mt-1 leading-1.2 text-dark-3">{{dest.circuitsCount}} Circuits</p>
+            </div>
+          </div>
+        }
+        @empty {
+          <div class="col-span-4 text-center py-20 text-dark-3">
+            <i class="bi bi-geo-alt text-5xl mb-4 block text-primary-1"></i>
+            <p class="text-lg">Aucune destination disponible pour le moment.</p>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>
+<!--========== DESTINATIONS LIST END ==========-->

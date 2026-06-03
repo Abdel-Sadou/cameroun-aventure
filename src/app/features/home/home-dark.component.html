@@ -190,61 +190,28 @@
     </div>
     <div class="max-w-[1690px] px-3 mx-auto">
       <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-base">
-        <div class="single-destina-tion group wow fadeInUp">
-          <div class="overflow-hidden h-[260px]">
-            <img src="assets/images/destination/d1-1.webp" alt="Mont Cameroun" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-          </div>
-          <div class="bg-white text-dark-1 text-center py-5 px-4">
-            <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
-              <a routerLink="/destinations">Mont Cameroun</a>
-            </h5>
-            <p class="font-medium text-base mt-1 leading-1.2">05 Circuits</p>
-          </div>
-        </div>
-        <div class="single-destina-tion group wow fadeInUp" data-wow-delay="0.2s">
-          <div class="overflow-hidden h-[260px]">
-            <img src="assets/images/destination/d1-2.webp" alt="Kribi" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-          </div>
-          <div class="bg-white text-dark-1 text-center py-5 px-4">
-            <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
-              <a routerLink="/destinations">Kribi & Lobé</a>
-            </h5>
-            <p class="font-medium text-base mt-1 leading-1.2">08 Circuits</p>
-          </div>
-        </div>
-        <div class="single-destina-tion group wow fadeInUp" data-wow-delay="0.4s">
-          <div class="overflow-hidden h-[260px]">
-            <img src="assets/images/destination/d1-3.webp" alt="Parc de Waza" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-          </div>
-          <div class="bg-white text-dark-1 text-center py-5 px-4">
-            <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
-              <a routerLink="/destinations">Parc de Waza</a>
-            </h5>
-            <p class="font-medium text-base mt-1 leading-1.2">04 Circuits</p>
-          </div>
-        </div>
-        <div class="single-destina-tion group wow fadeInUp" data-wow-delay="0.6s">
-          <div class="overflow-hidden h-[260px]">
-            <img src="assets/images/destination/d1-4.webp" alt="Forêt du Dja" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-          </div>
-          <div class="bg-white text-dark-1 text-center py-5 px-4">
-            <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
-              <a routerLink="/destinations">Forêt du Dja</a>
-            </h5>
-            <p class="font-medium text-base mt-1 leading-1.2">06 Circuits</p>
-          </div>
-        </div>
-        <div class="single-destina-tion group wow fadeInUp" data-wow-delay="0.8s">
-          <div class="overflow-hidden h-[260px]">
-            <img src="assets/images/destination/d1-5.webp" alt="Pays Bamiléké" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-          </div>
-          <div class="bg-white text-dark-1 text-center py-5 px-4">
-            <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
-              <a routerLink="/destinations">Pays Bamiléké</a>
-            </h5>
-            <p class="font-medium text-base mt-1 leading-1.2">03 Circuits</p>
-          </div>
-        </div>
+        @if (isLoadingDestinations) {
+          @for (i of [1,2,3,4,5]; track i) {
+            <div class="single-destina-tion animate-pulse">
+              <div class="bg-gray-200 h-[260px]"></div>
+              <div class="bg-white text-center py-5 px-4"><div class="h-4 bg-gray-200 rounded mx-auto w-3/4"></div></div>
+            </div>
+          }
+        } @else {
+          @for (dest of destinations; track dest.id) {
+            <div class="single-destina-tion group wow fadeInUp">
+              <div class="overflow-hidden h-[260px]">
+                <img [src]="getDestinationImage(dest)" [alt]="dest.name" class="w-full h-full object-cover group-hover:scale-105 duration-300">
+              </div>
+              <div class="bg-white text-dark-1 text-center py-5 px-4">
+                <h5 class="lg:text-2md text-md font-bold leading-1.5 group-hover:text-primary-1 duration-300">
+                  <a [routerLink]="['/destinations', dest.slug]">{{dest.name}}</a>
+                </h5>
+                <p class="font-medium text-base mt-1 leading-1.2">{{dest.circuitsCount}} Circuits</p>
+              </div>
+            </div>
+          }
+        }
       </div>
 
       <div class="mt-14 text-center">
@@ -269,139 +236,33 @@
       </div>
       <div class="swiper package-two-slider mt-17">
         <div class="swiper-wrapper">
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/packages/p2-1.webp" alt="Mont Cameroun" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-                <span class="absolute bg-status-info text-base px-4 py-2 top-0 text-white rotate-[-90deg] origin-top-left-1/3-3/4">Coup de cœur</span>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Mont Cameroun</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>180 000 FCFA</span>
-                  </div>
+          @for (circuit of circuits; track circuit.id) {
+            <div class="swiper-slide package-slide">
+              <div class="package-card-two group">
+                <div class="overflow-hidden relative h-[220px]">
+                  <a [routerLink]="['/circuits', circuit.slug]">
+                    <img [src]="getCircuitImage(circuit)" [alt]="circuit.title" class="w-full h-full object-cover group-hover:scale-105 duration-300">
+                  </a>
+                  @if (circuit.featured) {
+                    <span class="absolute bg-status-info text-base px-4 py-2 top-0 text-white rotate-[-90deg] origin-top-left-1/3-3/4">Coup de cœur</span>
+                  }
                 </div>
-                <p class="text-base leading-1.9 mt-3">Ascension du toit de l'Afrique de l'Ouest — 4 jours de trek inoubliable.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
+                <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
+                  <div class="flex justify-between items-center flex-wrap space-y-2">
+                    <h3 class="text-lg leading-1.5 font-semibold">{{circuit.title}}</h3>
+                    <div class="shrink-0 font-medium text-primary-1 text-[22px]">
+                      <span>{{circuit.price | number:'1.0-0'}} FCFA</span>
+                    </div>
+                  </div>
+                  <p class="text-base leading-1.9 mt-3">{{circuit.region}} — {{circuit.daysCount}} jours</p>
+                  <a [routerLink]="['/circuits', circuit.slug]" class="explore-btn group">
+                    <span>Découvrir</span>
+                    <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/packages/p2-2.webp" alt="Kribi" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Kribi & Chutes de la Lobé</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>120 000 FCFA</span>
-                  </div>
-                </div>
-                <p class="text-base leading-1.9 mt-3">La seule cascade se jetant directement dans l'océan — 3 jours de détente.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/packages/p2-3.webp" alt="Safari Waza" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Safari au Parc de Waza</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>250 000 FCFA</span>
-                  </div>
-                </div>
-                <p class="text-base leading-1.9 mt-3">Éléphants, girafes, lions… la faune sauvage du Grand Nord en 5 jours.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/packages/p2-9.webp" alt="Nord-Cameroun" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Circuit Nord-Cameroun</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>350 000 FCFA</span>
-                  </div>
-                </div>
-                <p class="text-base leading-1.9 mt-3">De Ngaoundéré à Maroua — paysages sahéliens, culture peule, 7 jours.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/destination/d1-4.webp" alt="Forêt du Dja" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Forêt du Dja</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>200 000 FCFA</span>
-                  </div>
-                </div>
-                <p class="text-base leading-1.9 mt-3">Réserve de biosphère UNESCO — randonnée en forêt équatoriale, 4 jours.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide package-slide">
-            <div class="package-card-two group">
-              <div class="overflow-hidden relative h-[220px]">
-                <a routerLink="/circuits/detail-1">
-                  <img src="assets/images/packages/p2-4.webp" alt="Pays Bamiléké" class="w-full h-full object-cover group-hover:scale-105 duration-300">
-                </a>
-              </div>
-              <div class="bg-white text-dark-1 px-6 pt-5 pb-base">
-                <div class="flex justify-between items-center flex-wrap space-y-2">
-                  <h3 class="text-lg leading-1.5 font-semibold">Chefferies Bamiléké</h3>
-                  <div class="shrink-0 font-medium text-primary-1 text-[22px]">
-                    <span>95 000 FCFA</span>
-                  </div>
-                </div>
-                <p class="text-base leading-1.9 mt-3">Palais royaux, artisanat et traditions de l'Ouest-Cameroun — 3 jours.</p>
-                <a routerLink="/circuits/detail-1" class="explore-btn group">
-                  <span>Découvrir</span>
-                  <div class="max-w-[24px]"><svg class="ml-2 group-hover:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path><path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                </a>
-              </div>
-            </div>
-          </div>
+          }
         </div>
       </div>
       <div class="common-pagination pack-two-pagi"></div>

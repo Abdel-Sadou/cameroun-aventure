@@ -12,10 +12,9 @@ export const routes: Routes = [
       { path: 'circuits/detail-1', loadComponent: () => import('./features/circuits/circuit-detail.component').then(m => m.CircuitDetailComponent) },
       { path: 'circuits/detail-2', loadComponent: () => import('./features/circuits/circuit-detail-2.component').then(m => m.CircuitDetail2Component) },
       { path: 'circuits/detail-3', loadComponent: () => import('./features/circuits/circuit-detail-3.component').then(m => m.CircuitDetail3Component) },
-      { path: 'circuits/:slug', loadComponent: () => import('./features/circuits/circuit-detail.component').then(m => m.CircuitDetailComponent) },/*
-      { path: 'destinations', loadComponent: () => import('./features/destinations/destination-list.component').then(m => m.DestinationListComponent) },*//*
-      { path: 'destinations/detail', loadComponent: () => import('./features/destinations/destination-detail.component').then(m => m.DestinationDetailComponent) },
-      { path: 'destinations/:slug', loadComponent: () => import('./features/destinations/destination-detail.component').then(m => m.DestinationDetailComponent) },*/
+      { path: 'circuits/:slug', loadComponent: () => import('./features/circuits/circuit-detail.component').then(m => m.CircuitDetailComponent) },
+      { path: 'destinations', loadComponent: () => import('./features/destinations/destination-list.component').then(m => m.DestinationListComponent) },
+      { path: 'destinations/:slug', loadComponent: () => import('./features/destinations/destination-detail.component').then(m => m.DestinationDetailComponent) },
       { path: 'booking', loadComponent: () => import('./features/booking/booking.component').then(m => m.BookingComponent) },
       { path: 'guides', loadComponent: () => import('./features/guides/guide-list.component').then(m => m.GuideListComponent) },
       /*{ path: 'gallery', loadComponent: () => import('./features/gallery/gallery.component').then(m => m.GalleryComponent) },

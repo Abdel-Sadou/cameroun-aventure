@@ -1,2 +1,127 @@
-<div class="container py-20 text-center"><h2>Destination Detail - Coming Soon</h2></div>
+@if (isLoading) {
+  <div class="container lg:py-30 py-24 text-center">
+    <div class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-primary-1 border-t-transparent"></div>
+    <p class="mt-4 text-dark-3">Chargement de la destination…</p>
+  </div>
+} @else if (destination) {
 
+<!--========== PAGE HEADER START ==========-->
+<div class="page_header__area bg-cover bg-center bg-no-repeat relative before:absolute before:content-[''] before:inset-0 before:bg-dark-base before:bg-opacity-60"
+  [style.background-image]="'url(' + getDestinationImage() + ')'">
+  <div class="container relative z-1 lg:py-[100px] py-[70px]">
+    <div class="text-center text-white">
+      <h2 class="lg:text-4xl text-2xl font-bold leading-1.3">{{destination.name}}</h2>
+      <nav class="flex justify-center items-center mt-4 space-x-2 text-sm font-medium">
+        <a routerLink="/" class="text-white hover:text-primary-1 duration-150">Accueil</a>
+        <span class="text-white opacity-60">/</span>
+        <a routerLink="/destinations" class="text-white hover:text-primary-1 duration-150">Destinations</a>
+        <span class="text-white opacity-60">/</span>
+        <span class="text-primary-1">{{destination.name}}</span>
+      </nav>
+    </div>
+  </div>
+</div>
+<!--========== PAGE HEADER END ==========-->
+
+<!--========== DESTINATION DETAIL START ==========-->
+<div class="lg:py-30 py-24">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-base">
+
+      <!-- Main content -->
+      <div class="lg:col-span-8 col-span-12">
+        <img [src]="getDestinationImage()" [alt]="destination.name" class="w-full rounded object-cover h-[400px]">
+
+        <div class="mt-8">
+          <h3 class="lg:text-2xl text-xl font-bold text-dark-1 mb-4">À propos de {{destination.name}}</h3>
+          <div class="text-dark-3 text-base leading-1.9 space-y-4">
+            <p>{{destination.description}}</p>
+          </div>
+
+          @if (destination.practicalInfo) {
+            <div class="mt-8 bg-gray-50 border border-stock-1 rounded p-6">
+              <h4 class="text-lg font-semibold text-dark-1 mb-2">
+                <i class="bi bi-info-circle text-primary-1 mr-2"></i>Informations pratiques
+              </h4>
+              <p class="text-dark-3">{{destination.practicalInfo}}</p>
+            </div>
+          }
+
+          @if (destination.bestTimeToVisit) {
+            <div class="mt-6 bg-primary-1 bg-opacity-5 border border-primary-1 border-opacity-20 rounded p-6">
+              <h4 class="text-lg font-semibold text-dark-1 mb-2">
+                <i class="bi bi-calendar-check text-primary-1 mr-2"></i>Meilleure période
+              </h4>
+              <p class="text-dark-3">{{destination.bestTimeToVisit}}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-4 col-span-12">
+        <div class="bg-white border border-stock-1 rounded p-6 sticky top-24">
+          <h4 class="text-lg font-semibold text-dark-1 mb-4">Infos pratiques</h4>
+          <ul class="space-y-4 text-base text-dark-3">
+            @if (destination.region) {
+              <li class="flex items-center gap-3">
+                <i class="bi bi-geo-alt text-primary-1 text-lg"></i>
+                <span><strong class="text-dark-1">Région :</strong> {{destination.region}}</span>
+              </li>
+            }
+            <li class="flex items-center gap-3">
+              <i class="bi bi-signpost-2 text-primary-1 text-lg"></i>
+              <span><strong class="text-dark-1">Circuits disponibles :</strong> {{destination.circuitsCount}}</span>
+            </li>
+          </ul>
+          <a routerLink="/circuits" [queryParams]="{region: destination.slug}"
+            class="btn_primary__v1 mt-6 w-full text-center block">
+            Voir les circuits
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Related circuits -->
+    @if (circuits.length > 0) {
+      <div class="mt-20">
+        <h3 class="lg:text-2xl text-xl font-bold text-dark-1 mb-8">Circuits à {{destination.name}}</h3>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-base">
+          @for (circuit of circuits; track circuit.id) {
+            <div class="group/card package-card-style-one">
+              <div class="overflow-hidden relative">
+                <a [routerLink]="['/circuits', circuit.slug]">
+                  <img [src]="getCircuitImage(circuit)" [alt]="circuit.title"
+                    class="w-full group-hover/card:scale-105 duration-300">
+                </a>
+                @if (circuit.featured) {
+                  <span class="absolute inline-block top-5 right-5 text-sm text-white rounded-full bg-[#219FFF] py-1 px-3">Populaire</span>
+                }
+              </div>
+              <h3 class="card-title-alpha group-hover/card:text-primary-1 lg:mt-6 mt-5">
+                <a [routerLink]="['/circuits', circuit.slug]">{{circuit.title}}</a>
+              </h3>
+              <ul class="flex flex-wrap lg:text-[15px] text-[13px] font-medium text-dark-2 mt-4 package-feature">
+                <li><span class="text-primary-1"><i class="bi bi-map"></i></span><span>{{circuit.region}}</span></li>
+                <li><span class="text-primary-1"><i class="bi bi-clock"></i></span><span>{{circuit.daysCount}} jours</span></li>
+                <li><span class="text-primary-1"><i class="bi bi-coin"></i></span><span>À partir de <span class="text-primary-1 font-bold">{{circuit.price | number:'1.0-0'}} FCFA</span></span></li>
+              </ul>
+              <a [routerLink]="['/circuits', circuit.slug]" class="package-explore-btn group/btn">
+                <span class="mr-2">Découvrir</span>
+                <svg class="group-hover/btn:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor" />
+                  <path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+  </div>
+</div>
+<!--========== DESTINATION DETAIL END ==========-->
+
+}

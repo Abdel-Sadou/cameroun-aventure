@@ -60,7 +60,7 @@
         <div class="flex flex-wrap justify-between pb-8 pt-6 mb-8 border-b border-stock-1">
             <div class="pt-2">
                 <h3 class="lg:text-2xl md:text-xl text-lg text-dark-1 leading-[1.42] font-medium">
-                    Trekking Mont Cameroun — 4 Jours au Toit de l'Afrique de l'Ouest
+                    {{circuit?.title || 'Chargement...'}}
                 </h3>
                 <div class="flex items-center mt-2">
                     <ul class="flex lg:gap-3 gap-2 text-primary-1 mr-3 text-sm">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="pt-2">
-                <h2 class="font-sans lg:text-[45px] leading-1.2 md:text-xl text-lg font-semibold">180 000 FCFA</h2>
+                <h2 class="font-sans lg:text-[45px] leading-1.2 md:text-xl text-lg font-semibold">{{circuit?.price | number:'1.0-0'}} FCFA</h2>
                 <div class="text-md font-normal ml-1">par personne</div>
             </div>
         </div>
@@ -99,30 +99,12 @@
                             <div class="lg:w-1/3 lg:text-2md text-md text-dark-2 font-medium">Inclus dans le prix</div>
                             <div class="lg:w-2/3 lg:mt-0 mt-4">
                                 <ul class="lg:grid flex flex-wrap grid-cols-2 lg:gap-y-5 gap-y-3 gap-x-3">
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
+                                    @for (item of circuit?.includes; track item) {
+                                      <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
                                         <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Hébergement 3 nuits (refuges)</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Guide certifié + porteurs</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Tous les repas sur le circuit</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 text-md mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Transport Yaoundé/Douala ↔ Buea</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 text-md mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Kit trekking (bâtons, lampe frontale)</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 text-md mr-2"><i class="bi bi-check2"></i></div>
-                                        <span>Assurance montagne incluse</span>
-                                    </li>
+                                        <span>{{item}}</span>
+                                      </li>
+                                    }
                                 </ul>
                             </div>
                         </li>
@@ -130,22 +112,12 @@
                             <div class="lg:w-1/3 lg:text-2md text-md text-dark-2 font-medium">Non inclus</div>
                             <div class="lg:w-2/3 lg:mt-0 mt-4">
                                 <ul class="lg:grid flex flex-wrap grid-cols-2 lg:gap-y-5 gap-y-3 gap-x-3">
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
+                                    @for (item of circuit?.excludes; track item) {
+                                      <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
                                         <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-x-lg"></i></div>
-                                        <span>Vols internationaux</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-x-lg"></i></div>
-                                        <span>Boissons alcoolisées</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 lg:text-md text-base mr-2"><i class="bi bi-x-lg"></i></div>
-                                        <span>Dépenses personnelles</span>
-                                    </li>
-                                    <li class="col-span-1 text-dark-3 text-sm lg:text-base flex items-center">
-                                        <div class="text-primary-1 text-md mr-2"><i class="bi bi-x-lg"></i></div>
-                                        <span>Pourboires guides (recommandés)</span>
-                                    </li>
+                                        <span>{{item}}</span>
+                                      </li>
+                                    }
                                 </ul>
                             </div>
                         </li>
@@ -179,52 +151,17 @@
                         <h3>Programme Jour par Jour</h3>
                         <p>Chaque journée est soigneusement planifiée pour vous offrir la meilleure expérience tout en respectant votre rythme d'acclimatation.</p>
                         <div>
-                            <div class="flex single__count">
+                            @for (day of circuit?.itinerary; track day.dayNumber) {
+                              <div class="flex single__count">
                                 <div class="shrink-0 day__count">
-                                    <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">01</div>
+                                  <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">{{day.dayNumber | number:'2.0-0'}}</div>
                                 </div>
                                 <div class="lg:ml-[18px] ml-4 pb-8">
-                                    <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">Jour 1 — Arrivée à Buea & Camp de Base (1 800 m)</h5>
-                                    <p>Départ de Yaoundé ou Douala tôt le matin. Arrivée à Buea en fin de matinée. Briefing complet avec votre guide certifié : présentation du parcours, vérification du matériel, consignes de sécurité. Montée tranquille jusqu'au camp de base à 1 800 m. Installation dans les refuges, dîner chaud et nuit en altitude pour l'acclimatation.</p>
+                                  <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">Jour {{day.dayNumber}} — {{day.title}}</h5>
+                                  <p>{{day.description}}</p>
                                 </div>
-                            </div>
-                            <div class="flex single__count">
-                                <div class="shrink-0 day__count">
-                                    <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">02</div>
-                                </div>
-                                <div class="lg:ml-[18px] ml-4 pb-8">
-                                    <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">Jour 2 — Ascension vers le Camp Mann (2 848 m)</h5>
-                                    <p>Réveil à l'aube, petit-déjeuner énergétique. La montée traverse la magnifique forêt montagnarde avant d'atteindre la savane d'altitude. Environ 6h de marche. Arrivée au refuge Mann avec vue imprenable sur le Golfe de Guinée.</p>
-                                    <ul>
-                                        <li><i class="bi bi-check-circle"></i> Guide local certifié</li>
-                                        <li><i class="bi bi-check-circle"></i> Déjeuner pique-nique inclus</li>
-                                        <li><i class="bi bi-check-circle"></i> Porteurs pour les bagages lourds</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="flex single__count">
-                                <div class="shrink-0 day__count">
-                                    <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">03</div>
-                                </div>
-                                <div class="lg:ml-[18px] ml-4 pb-8">
-                                    <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">Jour 3 — Sommet du Mont Cameroun (4 095 m)</h5>
-                                    <p>Départ à 4h du matin pour atteindre le sommet au lever du soleil — un moment magique inoubliable. Le terrain devient lunaire : lave noire, cratères, fumées volcaniques. Par temps clair, on aperçoit l'île de Bioko. Descente progressive vers Hut 2.</p>
-                                    <ul class="list-sm">
-                                        <li><i class="bi-check2"></i> Départ nocturne guidé</li>
-                                        <li><i class="bi-check2"></i> Lever de soleil au sommet</li>
-                                        <li><i class="bi-check2"></i> Certificat d'ascension remis</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="flex single__count">
-                                <div class="shrink-0 day__count">
-                                    <div class="lg:w-[52px] lg:h-[52px] w-10 h-10 rounded-full border border-primary-1 flex justify-center items-center lg:text-lg md:2md text-md font-semibold text-primary-1 bg-white">04</div>
-                                </div>
-                                <div class="lg:ml-[18px] ml-4 pb-8">
-                                    <h5 class="lg:text-[22px] text-md font-semibold text-dark-1 !lg:mt-[10px] !mt-2">Jour 4 — Descente Finale & Retour</h5>
-                                    <p>Descente matinale jusqu'à Buea par un itinéraire différent (boucle complète). Déjeuner en ville, remise du certificat d'ascension à chaque participant, puis transfert retour vers Yaoundé ou Douala.</p>
-                                </div>
-                            </div>
+                              </div>
+                            }
                         </div>
                     </div>
 
@@ -394,11 +331,19 @@
                 <div id="tab-3" class="tab-content" [class.active]="activeTab === 'booking'">
                     <form action="#" autocomplete="off" class="lg:px-base px-5 lg:pt-6 lg:pb-base pt-4 pb-5 bg-white border-primary-1 border">
                         <h4 class="lg:text-xl text-lg text-dark-1 font-semibold">
-                            <span class="text-md font-sans font-normal text-dark-3">À partir de</span> 180 000 FCFA
+                            <span class="text-md font-sans font-normal text-dark-3">À partir de</span> {{circuit?.price | number:'1.0-0'}} FCFA
                         </h4>
                         <div class="mt-5 lg:mt-6">
                             <label class="mb-2 text-dark-3 capitalize block">Date de départ</label>
-                            <input type="text" name="daterange" class="input_style__primary" />
+                            <select name="departureDate" class="input_style__primary">
+                              <option value="">Choisir une date</option>
+                              @for (d of departureDates; track d.id) {
+                                <option [value]="d.id" [disabled]="d.status === 'FULL' || d.status === 'CLOSED'">
+                                  {{d.departureDate | date:'dd/MM/yyyy'}} — {{getStatusLabel(d.status)}}
+                                  @if (d.status !== 'FULL' && d.status !== 'CLOSED') { ({{d.availableSpots}} places) }
+                                </option>
+                              }
+                            </select>
                         </div>
                         <div class="js-form-counters lg:mt-6 mt-5 relative">
                             <label class="mb-2 text-dark-3 capitalize block">Nombre de voyageurs</label>

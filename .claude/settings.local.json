@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:cameroontropicaltours.com)",
       "Bash(node -e \"const d=require\\('./angular.json'\\); const proj=Object.keys\\(d.projects\\)[0]; console.log\\(JSON.stringify\\(d.projects[proj].architect.build.options, null, 2\\)\\);\")",
-      "Bash(node -e \"const d=require\\('./angular.json'\\); const proj=Object.keys\\(d.projects\\)[0]; console.log\\(JSON.stringify\\(d.projects[proj].architect.build.configurations?.production?.budgets, null, 2\\)\\);\")"
+      "Bash(node -e \"const d=require\\('./angular.json'\\); const proj=Object.keys\\(d.projects\\)[0]; console.log\\(JSON.stringify\\(d.projects[proj].architect.build.configurations?.production?.budgets, null, 2\\)\\);\")",
+      "Bash(npx ng *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

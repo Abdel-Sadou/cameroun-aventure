@@ -1,8 +1,12 @@
-import { Component, AfterViewInit, inject } from '@angular/core';
+import { Component, AfterViewInit, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DevisService, DevisData, Circuit } from '../../shared/services/devis.service';
+import { CircuitService } from '../../core/services/circuit.service';
+import { BookingService } from '../../core/services/booking.service';
+import { CircuitDetail, DepartureDate } from '../../core/models/circuit.model';
+import { BookingCreateRequest, ParticipantRequest } from '../../core/models/booking.model';
 
 declare var WOW: any;
 declare var jarallax: any;
@@ -13,9 +17,13 @@ declare var jarallax: any;
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './booking.component.html',
 })
-export class BookingComponent implements AfterViewInit {
+export class BookingComponent implements OnInit, AfterViewInit {
   private readonly devisService = inject(DevisService);
+  private readonly circuitService = inject(CircuitService);
+  private readonly bookingService = inject(BookingService);
+  private readonly route = inject(ActivatedRoute);
 
+  // ─── Devis mode (existing — intact) ──────────────────────────────
   readonly circuits = this.devisService.circuits;
 
   formData: DevisData = {
@@ -102,6 +110,65 @@ export class BookingComponent implements AfterViewInit {
       transport: false, guideAnglophone: false, hebergementPremium: false,
       message: '',
     };
+  }
+
+  // ─── API Booking mode (new) ───────────────────────────────────────
+  mode: 'devis' | 'booking' = 'devis';
+  apiCircuit: CircuitDetail | null = null;
+  departureDates: DepartureDate[] = [];
+  selectedDate: DepartureDate | null = null;
+  participants: ParticipantRequest[] = [this.emptyParticipant()];
+  isBookingLoading = false;
+  bookingSuccess = '';
+  bookingError = '';
+
+  ngOnInit(): void {
+    const slug = this.route.snapshot.queryParams['circuit'];
+    if (slug) {
+      this.mode = 'booking';
+      this.circuitService.getBySlug(slug).subscribe({
+        next: (circuit) => {
+          this.apiCircuit = circuit;
+          this.circuitService.getDepartureDates(circuit.id).subscribe({
+            next: (dates) => this.departureDates = dates.filter(d => d.status === 'OPEN')
+          });
+        }
+      });
+    }
+  }
+
+  addParticipant(): void {
+    this.participants.push(this.emptyParticipant());
+  }
+
+  removeParticipant(index: number): void {
+    if (this.participants.length > 1) this.participants.splice(index, 1);
+  }
+
+  private emptyParticipant(): ParticipantRequest {
+    return { firstName: '', lastName: '' };
+  }
+
+  onSubmitBooking(): void {
+    if (!this.selectedDate || this.participants.length === 0) return;
+    this.isBookingLoading = true;
+    this.bookingError = '';
+
+    const request: BookingCreateRequest = {
+      departureDateId: this.selectedDate.id,
+      participants: this.participants,
+    };
+
+    this.bookingService.create(request).subscribe({
+      next: (booking) => {
+        this.isBookingLoading = false;
+        this.bookingSuccess = `Réservation ${booking.bookingReference} créée ! Retrouvez-la dans votre espace client.`;
+      },
+      error: (err) => {
+        this.isBookingLoading = false;
+        this.bookingError = err.error?.message || 'Erreur lors de la réservation. Veuillez réessayer.';
+      }
+    });
   }
 
   ngAfterViewInit(): void {

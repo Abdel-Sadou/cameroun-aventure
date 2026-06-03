@@ -1,268 +1,299 @@
 <!--========== HEADER STYLE ONE START ==========-->
-<header class="header-style" [class.sticky]="isScrolled">
-    <div class="desktop-menu max-w-[1570px] mx-auto justify-between items-center xl:flex hidden">
-        <div class="basis-[20%]">
-            <a routerLink="/circuits" class="btn_primary__v1">
-                Book A Trip
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-
-        <div class="main-menu flex items-center uppercase">
-            <div class="menu-one">
-                <ul class="flex items-center nav-list">
-
-                    <!-- dropdown -->
-                    <li class="group/step-one">
-                        <a href="#" class="nav-link has-dropdown">Home</a>
-                        <ul class="nav-dropdown">
-                            <li><a routerLink="/">Home Classic</a></li>
-                            <li><a routerLink="/home-dark">Home Dark</a></li>
-                            <li><a routerLink="/home-parallax">Home Parallax</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- dropdown -->
-                    <li class="group/step-one">
-                        <a href="javascript:void(0)" class="nav-link has-dropdown">Pages</a>
-                        <ul class="nav-dropdown">
-                            <li><a routerLink="/about">About Us</a></li>
-                            <li><a routerLink="/destinations">Destinations</a></li>
-                            <li><a routerLink="/destinations/detail">Destination Details</a></li>
-                            <li><a routerLink="/guides">Guides</a></li>
-                            <li><a routerLink="/gallery">Gallary</a></li>
-                            <li><a routerLink="/faq">FAQ</a></li>
-                            <li><a routerLink="/not-found">Error</a></li>
-                            <li><a routerLink="/auth">Sign Up / Sign In</a></li>
-                            <li><a routerLink="/booking">Booking</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- mega dropdown -->
-                    <li class="group/mega-dropdown">
-                        <a href="javascript:void(0)" class="nav-link has-dropdown">Destination</a>
-                        <div class="nav-mega-dropdown grid grid-cols-6 gap-x-1">
-                            <div class="col-span-4 border-r">
-                                <a routerLink="/circuits/sidebar"
-                                    class="py-2 flex items-center border-b border-stock-1 text-base text-dark-1 hover:text-primary-1 duration-200">
-                                    Browse All Destination
-                                    <div class="max-w-[20px] ml-2">
-                                        <svg class="group-hover/btn:translate-x-2 duration-200 " width="27"
-                                            height="14" viewBox="0 0 27 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997"
-                                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </div>
-                                </a>
-                                <ul class="grid grid-cols-3 mega-dropdown-links">
-                                    <li><a routerLink="/circuits">New York</a></li>
-                                    <li><a routerLink="/circuits">London</a></li>
-                                    <li><a routerLink="/circuits">Paris</a></li>
-                                    <li><a routerLink="/circuits">Dubai</a></li>
-                                    <li><a routerLink="/circuits">Miami</a></li>
-                                    <li><a routerLink="/circuits">Rome</a></li>
-                                    <li><a routerLink="/circuits">Seattle</a></li>
-                                    <li><a routerLink="/circuits">Amsterdam</a></li>
-                                    <li><a routerLink="/circuits">Chicago</a></li>
-                                    <li><a routerLink="/circuits">Las vegas</a></li>
-                                    <li><a routerLink="/circuits">Barcelona</a></li>
-                                    <li><a routerLink="/circuits">Cox's Bazar</a></li>
-                                    <li><a routerLink="/circuits">Istanbul</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-span-2">
-                                <a routerLink="/circuits">
-                                    <img src="assets/images/backgrounds/offer-banner.webp"
-                                        alt="offer-banner w-full">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-            <a routerLink="/" class="shrink-0 xl:mx-9 mx-7"><img src="assets/images/logo.png" alt="logo"></a>
-            <div class="menu-one">
-                <ul class="flex items-center nav-list">
-                    <!-- dropdown -->
-                    <li class="group/step-one">
-                        <a href="javascript:void(0)" class="nav-link has-dropdown">Blogs</a>
-                        <ul class="nav-dropdown">
-                            <li><a routerLink="/blog">Blog List</a></li>
-                            <li><a routerLink="/blog/detail">Blog Details</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- dropdown -->
-                    <li class="group/step-one">
-                        <a href="javascript:void(0)" class="nav-link has-dropdown">Packages</a>
-                        <ul class="nav-dropdown">
-                            <li><a routerLink="/circuits">Package List</a></li>
-                            <li><a routerLink="/circuits/sidebar">Package List Sidebar</a></li>
-                            <li><a routerLink="/circuits/detail-1">Package Details - Layout I</a></li>
-                            <li><a routerLink="/circuits/detail-2">Package Details - Layout II</a></li>
-                            <li><a routerLink="/circuits/detail-3">Package Details - Layout III</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a routerLink="/contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="basis-[20%] flex justify-end items-center">
-            <a href="#"
-                class="text-dark-1 font-medium text-base inline-flex items-center mr-8  hover:text-primary-1 duration-200">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" />
-                    <path
-                        d="M12 19C14.2091 19 16 17.2091 16 15C16 12.7909 14.2091 11 12 11C9.79086 11 8 12.7909 8 15C8 17.2091 9.79086 19 12 19Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M12.25 13.75V14.68C12.25 15.03 12.07 15.36 11.76 15.54L11 16" stroke="currentColor"
-                        stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M9.00007 22H15.0001C19.0201 22 19.7401 20.39 19.9501 18.43L20.7001 12.43C20.9701 9.99 20.2701 8 16.0001 8H8.00007C3.73007 8 3.03007 9.99 3.30007 12.43L4.05007 18.43C4.26007 20.39 4.98007 22 9.00007 22Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path
-                        d="M7.5 7.67001V6.70001C7.5 4.45001 9.31 2.24001 11.56 2.03001C14.24 1.77001 16.5 3.88001 16.5 6.51001V7.89001"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span class="ml-2">Cart (01)</span>
-            </a>
-            <a routerLink="/auth"
-                class="shrink-0 inline-flex justify-center items-center bg-primary-1 rounded-full h-12 w-12 text-white hover:bg-primary-2 duration-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+<header class="header-style herder-variant-two top-0 left-0 w-full z-10"
+  [class.absolute]="isHomePage && !isScrolled"
+  [class.sticky]="!isHomePage || isScrolled">
+  <div class="desktop-menu max-w-[1570px] mx-auto justify-between items-center xl:flex hidden">
+    <div class="basis-[20%]">
+      <a routerLink="/booking" class="btn_primary__v1">
+        Réserver un Voyage
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.42505 16.5999L12.8584 11.1666C13.5 10.5249 13.5 9.4749 12.8584 8.83324L7.42505 3.3999"
+            stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </a>
     </div>
-    <div class="mobile-menu xl:hidden flex justify-between items-center relative">
-        <a routerLink="/" class="shrink-0 max-w-[50px]"><img src="assets/images/logo.png" alt="logo"></a>
 
-        <div class="space-x-4 flex items-center">
-            <a href="#"
-                class="text-dark-1 font-base text-base inline-flex items-center hover:text-primary-1 duration-200">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" fill="white" />
-                    <path
-                        d="M12 19C14.2091 19 16 17.2091 16 15C16 12.7909 14.2091 11 12 11C9.79086 11 8 12.7909 8 15C8 17.2091 9.79086 19 12 19Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M12.25 13.75V14.68C12.25 15.03 12.07 15.36 11.76 15.54L11 16" stroke="currentColor"
-                        stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M9.00007 22H15.0001C19.0201 22 19.7401 20.39 19.9501 18.43L20.7001 12.43C20.9701 9.99 20.2701 8 16.0001 8H8.00007C3.73007 8 3.03007 9.99 3.30007 12.43L4.05007 18.43C4.26007 20.39 4.98007 22 9.00007 22Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path
-                        d="M7.5 7.67001V6.70001C7.5 4.45001 9.31 2.24001 11.56 2.03001C14.24 1.77001 16.5 3.88001 16.5 6.51001V7.89001"
-                        stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span class="ml-2">Cart (01)</span>
-            </a>
-            <a href="#"
-                class="shrink-0 inline-flex justify-center items-center bg-primary-2 rounded-full h-10 w-10 text-white">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z"
-                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-            <button class="hamburger" [class.hum-active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div class="mobil-menu" [class.mm-active]="isMobileMenuOpen">
-            <ul>
-                <li class="group/step-one">
-                    <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(0)">Home</a>
-                    <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(0)">
-                        <li><a routerLink="/">Home Classic</a></li>
-                        <li><a routerLink="/home-dark">Home Dark</a></li>
-                        <li><a routerLink="/home-parallax">Home Parallax</a></li>
-                    </ul>
-                </li>
-                <li class="group/step-one">
-                    <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(1)">Pages</a>
-                    <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(1)">
-                        <li><a routerLink="/about">About Us</a></li>
-                        <li><a routerLink="/destinations">Destinations</a></li>
-                        <li><a routerLink="/destinations/detail">Destination Details</a></li>
-                        <li><a routerLink="/guides">Guides</a></li>
-                        <li><a routerLink="/gallery">Gallary</a></li>
-                        <li><a routerLink="/faq">FAQ</a></li>
-                        <li><a routerLink="/not-found">Error</a></li>
-                        <li><a routerLink="/auth">Sign Up / Sign In</a></li>
-                        <li><a routerLink="/booking">Booking</a></li>
-                    </ul>
-                </li>
-                <li class="group/step-one">
-                    <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(2)">Destination</a>
-                    <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(2)">
-                        <li><a routerLink="/circuits">New York</a></li>
-                        <li><a routerLink="/circuits">London</a></li>
-                        <li><a routerLink="/circuits">Paris</a></li>
-                        <li><a routerLink="/circuits">Dubai</a></li>
-                        <li><a routerLink="/circuits">Miami</a></li>
-                        <li><a routerLink="/circuits">Rome</a></li>
-                        <li><a routerLink="/circuits">Seattle</a></li>
-                        <li><a routerLink="/circuits">Amsterdam</a></li>
-                        <li><a routerLink="/circuits">Chicago</a></li>
-                        <li><a routerLink="/circuits">Las vegas</a></li>
-                        <li><a routerLink="/circuits">Barcelona</a></li>
-                        <li><a routerLink="/circuits">Cox's Bazar</a></li>
-                        <li><a routerLink="/circuits">Istanbul</a></li>
-                    </ul>
-                </li>
-                <li class="group/step-one">
-                    <a href="#" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(3)">Blogs</a>
-                    <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(3)">
-                        <li><a routerLink="/blog">Blog List</a></li>
-                        <li><a routerLink="/blog/detail">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li class="group/step-one">
-                    <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(4)">Packages</a>
-                    <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(4)">
-                        <li><a routerLink="/circuits">Package List</a></li>
-                        <li><a routerLink="/circuits/sidebar">Package List Sidebar</a></li>
-                        <li><a routerLink="/circuits/detail-1">Package Details - Layout I</a></li>
-                        <li><a routerLink="/circuits/detail-2">Package Details - Layout II</a></li>
-                        <li><a routerLink="/circuits/detail-3">Package Details - Layout III</a></li>
-                    </ul>
-                </li>
-                <li class="group/step-one">
-                    <a routerLink="/contact" class="nav-link nav-link-sm">Contact</a>
-                </li>
+    <div class="main-menu flex items-center uppercase">
+      <div class="menu-one">
+        <ul class="flex items-center nav-list">
+          <li class="group/step-one">
+            <a routerLink="/" class="nav-link">Accueil</a>
+          </li>
+          <li class="group/step-one">
+            <a routerLink="/about" class="nav-link">À Propos</a>
+          </li>
+          <!-- mega dropdown Destinations -->
+          <li class="group/mega-dropdown">
+            <a href="javascript:void(0)" class="nav-link has-dropdown">Destinations</a>
+            <div class="nav-mega-dropdown grid grid-cols-6 gap-x-1">
+              <div class="col-span-4 border-r">
+                <a routerLink="/destinations"
+                  class="py-2 flex items-center border-b border-stock-1 text-base text-dark-1 hover:text-primary-1 duration-200">
+                  Toutes les Destinations
+                  <div class="max-w-[20px] ml-2">
+                    <svg class="group-hover/btn:translate-x-2 duration-200" width="27" height="14" viewBox="0 0 27 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.217443 6.25H18.4827C18.6276 6.25 18.7001 6.30263 18.7001 6.40789V7.59211C18.7001 7.69737 18.6276 7.75 18.4827 7.75H0.217443C0.0724811 7.75 0 7.69737 0 7.59211V6.40789C0 6.30263 0.0724811 6.25 0.217443 6.25Z" fill="currentColor"></path>
+                      <path d="M20.7001 12.28L25.0467 7.9333C25.5601 7.41997 25.5601 6.57997 25.0467 6.06664L20.7001 1.71997" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </a>
+                <ul class="grid grid-cols-3 mega-dropdown-links">
+                  <li><a routerLink="/destinations">Yaoundé & Centre</a></li>
+                  <li><a routerLink="/destinations">Est Cameroun</a></li>
+                  <li><a routerLink="/destinations">Grand Nord</a></li>
+                  <li><a routerLink="/destinations">Littoral & Mont Cameroun</a></li>
+                  <li><a routerLink="/destinations">Grand Ouest</a></li>
+                  <li><a routerLink="/destinations">Sud Cameroun</a></li>
+                  <li><a routerLink="/destinations">Kribi & Littoral</a></li>
+                  <li><a routerLink="/destinations">Forêt du Dja</a></li>
+                  <li><a routerLink="/destinations">Pays Bamiléké</a></li>
+                  <li><a routerLink="/destinations">Ngaoundéré</a></li>
+                  <li><a routerLink="/destinations">Monts Mandara</a></li>
+                  <li><a routerLink="/destinations">Lac Tchad</a></li>
+                </ul>
+              </div>
+              <div class="col-span-2">
+                <a routerLink="/circuits">
+                  <img src="assets/images/backgrounds/offer-banner.webp" alt="offer-banner w-full">
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <a routerLink="/" class="shrink-0 xl:mx-9 mx-7"><img src="assets/images/logo.png" alt="logo"></a>
+
+      <div class="menu-one">
+        <ul class="flex items-center nav-list">
+          <li class="group/step-one">
+            <a href="javascript:void(0)" class="nav-link has-dropdown">Circuits</a>
+            <ul class="nav-dropdown">
+              <li><a routerLink="/circuits">Tous les Circuits</a></li>
+              <li><a routerLink="/circuits">Trekking & Aventure</a></li>
+              <li><a routerLink="/circuits">Safari & Faune Sauvage</a></li>
+              <li><a routerLink="/circuits">Circuits Culturels</a></li>
+              <li><a routerLink="/circuits">Séjours Côtiers</a></li>
             </ul>
-        </div>
+          </li>
+          <li>
+            <a routerLink="/contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <div class="basis-[20%] flex justify-end items-center">
+      <!-- Bouton IA -->
+      <button (click)="showAIModal = true"
+        class="relative inline-flex items-center gap-1.5 px-4 py-2 mr-5 bg-gradient-to-r from-violet-600 to-indigo-500 text-white text-sm rounded hover:from-violet-500 hover:to-indigo-400 transition-all duration-300 group normal-case tracking-normal shrink-0">
+        <span class="absolute -top-2 -right-1.5 bg-amber-400 text-[8px] text-dark-1 font-black px-1 py-[1px] rounded-full leading-none animate-pulse uppercase tracking-wide">Bientôt</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300 group-hover:scale-110 shrink-0">
+          <path d="M12 2C12 2 13.2 7.8 18 9.5C13.2 11.2 12 17 12 17C12 17 10.8 11.2 6 9.5C10.8 7.8 12 2 12 2Z"/>
+          <path d="M19.5 14C19.5 14 20.2 16.8 22 17.5C20.2 18.2 19.5 21 19.5 21C19.5 21 18.8 18.2 17 17.5C18.8 16.8 19.5 14 19.5 14Z"/>
+        </svg>
+        <span>Assistant IA</span>
+      </button>
+
+      <!-- Toggle dark/light -->
+      <button (click)="themeService.toggle()"
+        class="mr-6 text-dark-1 dark:text-white hover:text-primary-1 duration-200 flex items-center"
+        [title]="themeService.isDark() ? 'Passer en mode clair' : 'Passer en mode sombre'">
+        @if (themeService.isDark()) {
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        }
+      </button>
+
+      <!-- Favoris -->
+      <a routerLink="/circuits" title="Circuits favoris"
+        class="text-dark-1 dark:text-white inline-flex items-center mr-6 hover:text-primary-1 duration-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <!-- Connexion / Espace client -->
+      @if (isLoggedIn) {
+        <a routerLink="/client-space" title="Mon espace client"
+          class="shrink-0 inline-flex justify-center items-center bg-primary-2 rounded-full h-12 w-12 text-white hover:bg-primary-1 duration-300">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      } @else {
+        <a routerLink="/auth" title="Connexion"
+          class="shrink-0 inline-flex justify-center items-center bg-primary-1 rounded-full h-12 w-12 text-white hover:bg-primary-2 duration-300">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      }
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu xl:hidden flex justify-between items-center relative">
+    <a routerLink="/" class="shrink-0 max-w-[50px]"><img src="assets/images/logo.png" alt="logo"></a>
+    <div class="space-x-4 flex items-center">
+      <button (click)="themeService.toggle()" class="text-dark-1 dark:text-white hover:text-primary-1 duration-200 flex items-center">
+        @if (themeService.isDark()) {
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        }
+      </button>
+
+      <a routerLink="/circuits" title="Favoris" class="text-dark-1 dark:text-white inline-flex items-center hover:text-primary-1 duration-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      @if (isLoggedIn) {
+        <a routerLink="/client-space" class="shrink-0 inline-flex justify-center items-center bg-primary-2 rounded-full h-10 w-10 text-white">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      } @else {
+        <a routerLink="/auth" class="shrink-0 inline-flex justify-center items-center bg-primary-2 rounded-full h-10 w-10 text-white">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      }
+
+      <button class="hamburger" [class.hum-active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobil-menu" [class.mm-active]="isMobileMenuOpen">
+      <ul>
+        <li class="group/step-one">
+          <a routerLink="/" class="nav-link nav-link-sm">Accueil</a>
+        </li>
+        <li class="group/step-one">
+          <a routerLink="/about" class="nav-link nav-link-sm">À Propos</a>
+        </li>
+        <li class="group/step-one">
+          <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(4)">Circuits</a>
+          <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(4)">
+            <li><a routerLink="/circuits">Tous les Circuits</a></li>
+            <li><a routerLink="/circuits">Trekking & Aventure</a></li>
+            <li><a routerLink="/circuits">Safari & Faune Sauvage</a></li>
+            <li><a routerLink="/circuits">Circuits Culturels</a></li>
+            <li><a routerLink="/circuits">Séjours Côtiers</a></li>
+          </ul>
+        </li>
+        <li class="group/step-one">
+          <a href="javascript:void(0)" class="nav-link nav-link-sm has-dropdown" (click)="toggleDropdown(5)">Destinations</a>
+          <ul class="nav-dropdown-sm" [class.nav-show]="isDropdownOpen(5)">
+            <li><a routerLink="/destinations">Toutes les Destinations</a></li>
+            <li><a routerLink="/destinations">Est Cameroun</a></li>
+            <li><a routerLink="/destinations">Grand Nord</a></li>
+            <li><a routerLink="/destinations">Grand Ouest</a></li>
+            <li><a routerLink="/destinations">Littoral & Mont Cameroun</a></li>
+            <li><a routerLink="/destinations">Sud Cameroun</a></li>
+          </ul>
+        </li>
+        <li class="group/step-one">
+          <a routerLink="/contact" class="nav-link nav-link-sm">Contact</a>
+        </li>
+        <li class="pt-2 pb-1 px-2">
+          <button (click)="showAIModal = true; isMobileMenuOpen = false"
+            class="relative w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-gradient-to-r from-violet-600 to-indigo-500 text-white text-sm font-bold hover:from-violet-500 hover:to-indigo-400 transition-all duration-300 active:scale-95 normal-case">
+            <span class="absolute -top-2 right-4 bg-amber-400 text-[8px] text-dark-1 font-black px-1.5 py-[1px] rounded-full leading-none animate-pulse uppercase">Bientôt</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C12 2 13.2 7.8 18 9.5C13.2 11.2 12 17 12 17C12 17 10.8 11.2 6 9.5C10.8 7.8 12 2 12 2Z"/>
+              <path d="M19.5 14C19.5 14 20.2 16.8 22 17.5C20.2 18.2 19.5 21 19.5 21C19.5 21 18.8 18.2 17 17.5C18.8 16.8 19.5 14 19.5 14Z"/>
+            </svg>
+            Assistant IA
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
 <!--========== HEADER STYLE ONE END ==========-->
+
+<!-- ========== MODAL IA ========== -->
+@if (showAIModal) {
+  <div class="fixed inset-0 z-[9999] flex items-center justify-center p-4" (click)="showAIModal = false">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative bg-white dark:bg-[#1a1c21] rounded-3xl shadow-2xl max-w-lg w-full p-8 border border-violet-500/20" (click)="$event.stopPropagation()">
+      <button (click)="showAIModal = false" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors duration-200">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="flex flex-col items-center text-center mb-6">
+        <div class="relative mb-4">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-500 flex items-center justify-center shadow-xl shadow-violet-500/40">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 1C12 1 14 8.5 20 10.5C14 12.5 12 20 12 20C12 20 10 12.5 4 10.5C10 8.5 12 1 12 1Z"/>
+              <path d="M20 15C20 15 21 18 23 18.8C21 19.6 20 22.5 20 22.5C20 22.5 19 19.6 17 18.8C19 18 20 15 20 15Z"/>
+              <path d="M4 2C4 2 4.8 4.5 6.5 5C4.8 5.5 4 8 4 8C4 8 3.2 5.5 1.5 5C3.2 4.5 4 2 4 2Z"/>
+            </svg>
+          </div>
+          <span class="absolute -top-2 -right-2 bg-amber-400 text-[10px] text-dark-1 font-black px-2 py-1 rounded-full leading-none animate-pulse">BIENTÔT</span>
+        </div>
+        <h3 class="text-2xl font-bold text-dark-1 dark:text-white mb-1">Assistant IA</h3>
+        <p class="text-sm font-semibold text-violet-500 uppercase tracking-widest">Cameroun Aventure</p>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 text-center text-sm leading-relaxed mb-6">
+        Notre intelligence artificielle va révolutionner la planification de vos voyages au Cameroun. En quelques secondes, bénéficiez d'un accompagnement personnalisé.
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-dark-1 dark:text-white">Recommandations personnalisées</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Circuits adaptés à vos préférences, budget et durée</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-dark-1 dark:text-white">Devis PDF en quelques secondes</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Proposition chiffrée et personnalisée instantanément</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center shrink-0 mt-0.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-dark-1 dark:text-white">Assistant voyage dans votre espace client</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Réponses contextuelles sur votre circuit réservé</p>
+          </div>
+        </li>
+      </ul>
+      <a routerLink="/contact" (click)="showAIModal = false"
+        class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full text-white font-semibold text-sm bg-gradient-to-r from-violet-600 to-indigo-500 hover:from-violet-500 hover:to-indigo-400 shadow-lg shadow-violet-500/30 transition-all duration-300 hover:scale-[1.02]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+        Être notifié en avant-première
+      </a>
+    </div>
+  </div>
+}
